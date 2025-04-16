@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1g7hdm4cra1a"]
+
+[ext_resource type="Texture2D" uid="uid://mmvm2nu6tg6f" path="res://assets/Background/Brown.png" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://dclt82y1xuy5v" path="res://scene/main.gd" id="1_v0l8b"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_v0l8b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_itxqv")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -382.5
+offset_top = -212.735
+offset_right = 382.5
+offset_bottom = -54.735
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.441531, 7.70092e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.929412)
+theme_override_font_sizes/font_size = 116
+text = "BOMBERMAN"
+
+[node name="PLAY" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -41.77
+offset_right = 133.0
+offset_bottom = 76.23
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "PLAY"
+
+[node name="EXIT" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = 107.965
+offset_right = 133.0
+offset_bottom = 225.965
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "EXIT"
+
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
