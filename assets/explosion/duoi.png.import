@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6phxc4h4ktew"
-path="res://.godot/imported/around.png-ed7567775956c747132cf32d74d7659b.ctex"
+uid="uid://c2y85mdf78jsd"
+path="res://.godot/imported/duoi.png-3dd73e251b15d5d790c082b48e2107c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/explosion/around.png"
-dest_files=["res://.godot/imported/around.png-ed7567775956c747132cf32d74d7659b.ctex"]
+source_file="res://assets/explosion/duoi.png"
+dest_files=["res://.godot/imported/duoi.png-3dd73e251b15d5d790c082b48e2107c7.ctex"]
 
 [params]
 
