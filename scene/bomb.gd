@@ -2,7 +2,7 @@ extends StaticBody2D
 signal bomb_exploded
 
 @onready var collisionShape = $CollisionShape2D
-@onready var WallTileMap = get_parent().get_node("TileMap")
+@onready var WallTileMap = get_parent().get_node("kothepha")
 @onready var Explosion = preload("res://scene/explosion.tscn")
 
 func _ready():
