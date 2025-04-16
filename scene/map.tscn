@@ -559,4 +559,4 @@ layer_0/tile_data = PackedInt32Array(327689, 589824, 1, 458761, 589824, 1, 58983
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_wpp1k")]
 position = Vector2(135, 68)
-scale = Vector2(0.98, 0.98)
+scale = Vector2(0.9, 0.9)

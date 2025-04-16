@@ -1,75 +1,31 @@
-[gd_scene load_steps=22 format=3 uid="uid://bd66gj4yl4sam"]
+[gd_scene load_steps=11 format=3 uid="uid://bd66gj4yl4sam"]
 
 [ext_resource type="Script" uid="uid://bv0lqpvuxvtcc" path="res://scene/bomb.gd" id="1_coick"]
-[ext_resource type="Texture2D" uid="uid://cjim3nx5sbgo4" path="res://assets/Items/Fruits/Kiwi.png" id="2_coick"]
+[ext_resource type="Texture2D" uid="uid://de33a1yt7qbfi" path="res://assets/Bomb/bomb.png" id="2_coick"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjs2y"]
 atlas = ExtResource("2_coick")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r17kw"]
 atlas = ExtResource("2_coick")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(20, 0, 20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ue2tq"]
 atlas = ExtResource("2_coick")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(40, 0, 20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xnax7"]
 atlas = ExtResource("2_coick")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(60, 0, 20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnjvp"]
 atlas = ExtResource("2_coick")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(80, 0, 20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2qk6"]
 atlas = ExtResource("2_coick")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ho1gg"]
-atlas = ExtResource("2_coick")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1c1xb"]
-atlas = ExtResource("2_coick")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqpxh"]
-atlas = ExtResource("2_coick")
-region = Rect2(256, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ny130"]
-atlas = ExtResource("2_coick")
-region = Rect2(288, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0ft3"]
-atlas = ExtResource("2_coick")
-region = Rect2(320, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xixn"]
-atlas = ExtResource("2_coick")
-region = Rect2(352, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lonss"]
-atlas = ExtResource("2_coick")
-region = Rect2(384, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2w13f"]
-atlas = ExtResource("2_coick")
-region = Rect2(416, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jim26"]
-atlas = ExtResource("2_coick")
-region = Rect2(448, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c53v8"]
-atlas = ExtResource("2_coick")
-region = Rect2(480, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7kjh0"]
-atlas = ExtResource("2_coick")
-region = Rect2(512, 0, 32, 32)
+region = Rect2(100, 0, 20, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kjh0"]
 animations = [{
@@ -91,39 +47,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2qk6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ho1gg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1c1xb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fqpxh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ny130")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b0ft3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6xixn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lonss")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2w13f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jim26")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c53v8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7kjh0")
 }],
 "loop": true,
 "name": &"default",
@@ -140,6 +63,8 @@ script = ExtResource("1_coick")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(2.38419e-07, -2)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_7kjh0")
 autoplay = "default"
 frame_progress = 0.902441

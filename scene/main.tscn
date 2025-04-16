@@ -1,20 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1g7hdm4cra1a"]
 
-[ext_resource type="Texture2D" uid="uid://mmvm2nu6tg6f" path="res://assets/Background/Brown.png" id="1_itxqv"]
 [ext_resource type="Script" uid="uid://dclt82y1xuy5v" path="res://scene/main.gd" id="1_v0l8b"]
+[ext_resource type="Texture2D" uid="uid://bqxmnyxob5n3y" path="res://assets/Background/background.png" id="2_v0l8b"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_v0l8b")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_itxqv")
-stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -68,6 +58,11 @@ scale = Vector2(0.47, 0.47)
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "EXIT"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(263, 115)
+texture = ExtResource("2_v0l8b")
 
 [connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]

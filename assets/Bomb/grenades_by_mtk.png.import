@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0op6v7rqv76e"
-path="res://.godot/imported/Purple.png-1bbfce750c918bc9c61c4becfaf5dffb.ctex"
+uid="uid://bkrp5h0sakhib"
+path="res://.godot/imported/grenades_by_mtk.png-e8da58d719218d2c5f3c305a0b6aba64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/Purple.png"
-dest_files=["res://.godot/imported/Purple.png-1bbfce750c918bc9c61c4becfaf5dffb.ctex"]
+source_file="res://assets/Bomb/grenades_by_mtk.png"
+dest_files=["res://.godot/imported/grenades_by_mtk.png-e8da58d719218d2c5f3c305a0b6aba64.ctex"]
 
 [params]
 
