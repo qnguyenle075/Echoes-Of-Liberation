@@ -5,7 +5,7 @@ extends Node
 
 
 func _on_playagain_pressed() -> void:
-	get_tree().change_scene_to_file("res://scene/map/map.tscn")
+	get_tree().change_scene_to_file("res://scene/map/map1/map.gd")
 	
 
 

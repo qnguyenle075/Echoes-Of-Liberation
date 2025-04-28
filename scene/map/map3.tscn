@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck0rpvrh64bmm"]
+[gd_scene load_steps=2 format=3 uid="uid://bj70mh0bsbh2o"]
 
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="2_cnril"]
 
@@ -6,6 +6,5 @@
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_cnril")]
 position = Vector2(136, 66)
-scale = Vector2(0.9, 0.9)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

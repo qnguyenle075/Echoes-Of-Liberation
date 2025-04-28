@@ -1,14 +1,29 @@
-[gd_scene load_steps=44 format=3 uid="uid://dm3nlnlprknj3"]
+[gd_scene load_steps=50 format=3 uid="uid://dm3nlnlprknj3"]
 
 [ext_resource type="Script" uid="uid://dfbdkphwq4t03" path="res://scene/character/player/player.gd" id="1_hjaqi"]
 [ext_resource type="Texture2D" uid="uid://bxpi71mvfm3ng" path="res://assets/Main Characters/player/IDLE/NES_Soldier_IDLE_EAST_strip4.png" id="2_2fvbb"]
 [ext_resource type="Texture2D" uid="uid://bd5if46dbf4o8" path="res://assets/Main Characters/player/IDLE/NES_Soldier_IDLE_NORTH_strip4.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://nmeiv1316xtq" path="res://assets/Main Characters/player/IDLE/NES_Soldier_SOUTH_strip4.png" id="2_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://bd7djc27clitv" path="res://assets/Main Characters/player/die/NES_Soldier_CLIMB_SOUTH_strip4.png" id="2_ogynd"]
+[ext_resource type="Texture2D" uid="uid://byh1pcim0w38j" path="res://assets/Main Characters/player/die/NES_Soldier_JUMP_SOUTH.png" id="3_ica1f"]
+[ext_resource type="Texture2D" uid="uid://dncdwuytrfo0q" path="res://assets/Main Characters/player/die/NES_Soldier_HITHURT_SOUTH.png" id="4_ov336"]
 [ext_resource type="Texture2D" uid="uid://dorymqww8v413" path="res://assets/Main Characters/player/IDLE/NES_Soldier_IDLE_WEST_strip4.png" id="5_ml7e8"]
 [ext_resource type="Texture2D" uid="uid://dqhcb66s5mjvo" path="res://assets/Main Characters/player/RUN/SMS_Soldier_RUN_EAST_strip4.png" id="6_ihjo1"]
 [ext_resource type="Texture2D" uid="uid://da1xlvh7s4byc" path="res://assets/Main Characters/player/RUN/SMS_Soldier_RUN_NORTH_strip4.png" id="7_dk1vr"]
 [ext_resource type="Texture2D" uid="uid://rlxkvbm2iy6c" path="res://assets/Main Characters/player/RUN/SMS_Soldier_RUN_SOUTH_strip4.png" id="8_34jf3"]
 [ext_resource type="Texture2D" uid="uid://b1gvattylc5cj" path="res://assets/Main Characters/player/RUN/SMS_Soldier_RUN_WEST_strip4.png" id="9_u7b46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t26f"]
+atlas = ExtResource("2_ogynd")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxknt"]
+atlas = ExtResource("3_ica1f")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh58l"]
+atlas = ExtResource("4_ov336")
+region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4wxg"]
 atlas = ExtResource("2_2fvbb")
@@ -140,6 +155,20 @@ region = Rect2(48, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hp4bs"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t26f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxknt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh58l")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j4wxg")
@@ -279,20 +308,21 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
 radius = 4.0
-height = 16.0
+height = 13.3333
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
 texture_filter = 1
 scale = Vector2(0.9, 0.9)
-collision_mask = 14
+collision_mask = 30
 script = ExtResource("1_hjaqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hp4bs")
-animation = &"run_west"
+animation = &"die"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 4)
+position = Vector2(0, 4.44444)
 shape = SubResource("CapsuleShape2D_hjaqi")

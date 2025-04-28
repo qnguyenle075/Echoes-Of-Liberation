@@ -66,12 +66,13 @@ var is_dead := false
 
 func die():
 	if is_dead:
-		return # Chết rồi thì thôi, khỏi chết lần 2
+		return
 	is_dead = true
 
 	velocity = Vector2.ZERO
-	set_physics_process(false) # Dừng không cho điều khiển nữa
-	animated_sprite.play("die") # Nếu cậu có animation chết
+	set_physics_process(false)
+	animated_sprite.play("die")
 
-	await animated_sprite.animation_finished
-	queue_free() # Xóa player khỏi scene
+	# Force chờ khoảng 0.5 giây rồi biến mất
+	await get_tree().create_timer(0.6).timeout
+	queue_free()
