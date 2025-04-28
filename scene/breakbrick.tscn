@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://d03qkcsv8rdj"]
+
+[ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_bnhm6"]
+[ext_resource type="Script" uid="uid://ct30m0hf32bpl" path="res://scene/breakbrick.gd" id="1_gjvlc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjvlc"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(112, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj8kt"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(128, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwuri"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(144, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1saf"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(112, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x43iq"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(128, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlk68"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(144, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yeh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjvlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj8kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwuri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1saf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x43iq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlk68")
+}],
+"loop": true,
+"name": &"boom",
+"speed": 5.0
+}]
+
+[node name="Node" type="Node2D"]
+script = ExtResource("1_gjvlc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0yeh4")
+animation = &"boom"
+frame_progress = 0.821255
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+autostart = true

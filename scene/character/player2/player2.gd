@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 100.0
-@export var input_prefix : String = "p1"
+@export var input_prefix : String = "p2"
 @onready var BombScene = preload("res://scene/bomb/bomb.tscn")
 @onready var animated_sprite = $AnimatedSprite2D
 var last_direction: String = "south"  # Hướng mặc định ban đầu

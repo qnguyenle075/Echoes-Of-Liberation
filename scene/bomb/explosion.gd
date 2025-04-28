@@ -8,6 +8,11 @@ func play_animation(name: String):
 
 func _ready():
 	timer.timeout.connect(_on_timeout)
+	connect("body_entered", _on_body_entered)
 
 func _on_timeout():
 	queue_free()
+
+func _on_body_entered(body):
+	if body.is_in_group("players"): # Player phải nằm trong group "players"
+		body.die() # Gọi hàm chết bên player

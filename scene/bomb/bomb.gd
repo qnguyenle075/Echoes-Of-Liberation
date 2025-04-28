@@ -4,6 +4,8 @@ signal bomb_exploded
 @onready var collisionShape = $CollisionShape2D
 @onready var WallTileMap = get_parent().get_node("kothepha")
 @onready var Explosion = preload("res://scene/bomb/explosion.tscn")
+@onready var BrickTileMap = get_parent().get_node("brick")
+@onready var BrickExplosionScene = preload("res://scene/breakbrick.tscn")
 
 func _ready():
 	
@@ -44,16 +46,32 @@ func spawn_explosions():
 	for dir_name in directions.keys():
 		var offset = directions[dir_name]
 		var target_pos = center_pos + offset * tile_size
-		
 		var tile_coords = WallTileMap.local_to_map(target_pos)
 		
-		# LẤY TILE ID Ở LAYER 3
-		var tile_data = WallTileMap.get_cell_tile_data(tile_coords)
-		
-		# Nếu tile_data khác null, tức là đang có tường thì ngừng nổ tiếp
-		if dir_name != "center" and tile_data != null:
+		# Nếu đụng Wall => ngưng không nổ tiếp
+		if WallTileMap.get_cell_tile_data(tile_coords) != null:
 			continue
 		
+		# Nếu đụng Brick => phá Brick rồi dừng lan
+		if BrickTileMap.get_cell_tile_data(tile_coords) != null:
+			# Spawn hiệu ứng phá gạch
+			var brick_explosion = BrickExplosionScene.instantiate()
+			get_parent().add_child(brick_explosion)
+			brick_explosion.global_position = target_pos
+
+			# Xóa Brick
+			BrickTileMap.set_cell(tile_coords, -1)
+			
+			# Spawn explosion tại chỗ Brick bị phá
+			var explosion = Explosion.instantiate()
+			get_parent().add_child(explosion)
+			explosion.global_position = target_pos
+			explosion.play_animation(dir_name)
+
+			# Sau khi phá Brick thì ngưng nổ tiếp theo hướng đó
+			continue
+
+		# Nếu không gặp gì thì nổ bình thường
 		var explosion = Explosion.instantiate()
 		get_parent().add_child(explosion)
 		explosion.global_position = target_pos
