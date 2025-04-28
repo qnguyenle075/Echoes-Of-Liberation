@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bd66gj4yl4sam"]
 
-[ext_resource type="Script" uid="uid://bv0lqpvuxvtcc" path="res://scene/bomb.gd" id="1_coick"]
+[ext_resource type="Script" uid="uid://bv0lqpvuxvtcc" path="res://scene/bomb/bomb.gd" id="1_coick"]
 [ext_resource type="Texture2D" uid="uid://de33a1yt7qbfi" path="res://assets/Bomb/bomb.png" id="2_coick"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjs2y"]

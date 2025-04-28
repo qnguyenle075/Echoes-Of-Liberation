@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://dfox5c2kwfgg6"]
 
-[ext_resource type="Script" uid="uid://de086yvk88v3u" path="res://scene/explosion.gd" id="1_j4sxf"]
+[ext_resource type="Script" uid="uid://de086yvk88v3u" path="res://scene/bomb/explosion.gd" id="1_j4sxf"]
 [ext_resource type="Texture2D" uid="uid://c5o5xibnibr5y" path="res://assets/explosion/center.png" id="1_vxas0"]
 [ext_resource type="Texture2D" uid="uid://b6phxc4h4ktew" path="res://assets/explosion/phai.png" id="2_j4sxf"]
 [ext_resource type="Texture2D" uid="uid://c2y85mdf78jsd" path="res://assets/explosion/duoi.png" id="3_uox2b"]
@@ -286,8 +286,8 @@ height = 18.0
 
 [node name="explosion" type="Area2D"]
 scale = Vector2(1.2, 1.2)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 4
 script = ExtResource("1_j4sxf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

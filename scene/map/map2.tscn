@@ -529,7 +529,7 @@ sources/0 = SubResource("TileSetAtlasSource_l5vko")
 
 [node name="Map2" type="Node"]
 
-[node name="kothepha2" type="TileMap" parent="."]
+[node name="kothepha" type="TileMap" parent="." groups=["vatcanno"]]
 texture_filter = 1
 tile_set = SubResource("TileSet_1dwx2")
 format = 2
