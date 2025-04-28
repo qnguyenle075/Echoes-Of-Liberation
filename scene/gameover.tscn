@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://kuaxae7ivn1m"]
+[gd_scene load_steps=2 format=3 uid="uid://kuaxae7ivn1m"]
 
-[ext_resource type="Texture2D" uid="uid://mmvm2nu6tg6f" path="res://assets/Background/Brown.png" id="2_73nri"]
 [ext_resource type="Script" uid="uid://8y2qek2axtkl" path="res://scene/gameover.gd" id="3_73nri"]
 
 [node name="Node" type="Node"]
@@ -13,7 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_73nri")
 stretch_mode = 1
 
 [node name="Label" type="Label" parent="."]

@@ -48,8 +48,8 @@ func spawn_explosions():
 		var tile_coords = WallTileMap.local_to_map(target_pos)
 		var tile_id = WallTileMap.get_cell_source_id(0, tile_coords)
 		
-		if tile_id != -1 and dir_name != "center":
-			continue
+		#if tile_id != -1 and dir_name != "center":
+			#continue
 
 		var explosion = Explosion.instantiate()
 		get_parent().add_child(explosion)

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="test"
+config/name="bomberman"
 run/main_scene="uid://c1g7hdm4cra1a"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
