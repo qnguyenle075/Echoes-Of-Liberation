@@ -20,7 +20,11 @@ config/icon="res://icon.svg"
 window/size/viewport_width=500
 window/size/viewport_height=300
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
+
+[global_group]
+
+map1=""
+map2=""
 
 [input]
 

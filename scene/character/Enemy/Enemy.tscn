@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://bs8gu5htu00pk"]
 
 [ext_resource type="Texture2D" uid="uid://bdumiycr13gbj" path="res://assets/Enemies/IDLE/SMS_Soldier_IDLE_WEST_strip4.png" id="1_106yf"]
-[ext_resource type="Script" uid="uid://qan5vrscnkkj" path="res://scene/character/enemy/enemy.gd" id="1_uhcuf"]
+[ext_resource type="Script" uid="uid://qan5vrscnkkj" path="res://scene/character/Enemy/enemy.gd" id="1_uhcuf"]
 [ext_resource type="Texture2D" uid="uid://cfkspbqhri88o" path="res://assets/Enemies/IDLE/SMS_Soldier_IDLE_EAST_strip4.png" id="2_711mf"]
 [ext_resource type="Texture2D" uid="uid://cln72cwrj4fg3" path="res://assets/Enemies/IDLE/SMS_Soldier_IDLE_NORTH_strip4.png" id="3_w3d0v"]
 [ext_resource type="Texture2D" uid="uid://cbw078rqufdgj" path="res://assets/Enemies/IDLE/SMS_Soldier_SOUTH_strip4.png" id="4_lm85r"]
@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cjh8pgfddmo0a" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_WEST_strip4.png" id="6_hm477"]
 [ext_resource type="Texture2D" uid="uid://bmp0w3w73hlhu" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_EAST_strip4.png" id="7_p7xrw"]
 [ext_resource type="Texture2D" uid="uid://crfk3lv7s6ylx" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_NORTH_strip4.png" id="8_y1cc8"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23g6a"]
-radius = 4.0
-height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hm477"]
 atlas = ExtResource("1_106yf")
@@ -281,19 +277,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23g6a"]
+radius = 4.0
+height = 12.0
+
 [node name="Enemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 32
+collision_mask = 30
 script = ExtResource("1_uhcuf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 17)
-shape = SubResource("CapsuleShape2D_23g6a")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 14)
 sprite_frames = SubResource("SpriteFrames_kjkdt")
 animation = &"Run_Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_23g6a")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true

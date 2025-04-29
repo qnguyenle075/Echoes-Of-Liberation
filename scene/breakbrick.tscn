@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d03qkcsv8rdj"]
+[gd_scene load_steps=16 format=3 uid="uid://d03qkcsv8rdj"]
 
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_bnhm6"]
 [ext_resource type="Script" uid="uid://ct30m0hf32bpl" path="res://scene/breakbrick.gd" id="1_gjvlc"]
@@ -27,6 +27,30 @@ region = Rect2(128, 144, 16, 16)
 atlas = ExtResource("1_bnhm6")
 region = Rect2(144, 144, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yeh4"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(352, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d248q"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(368, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rtjl"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(384, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1xvw"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(352, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0o22"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(368, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lrlq"]
+atlas = ExtResource("1_bnhm6")
+region = Rect2(384, 32, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0yeh4"]
 animations = [{
 "frames": [{
@@ -49,8 +73,31 @@ animations = [{
 "texture": SubResource("AtlasTexture_xlk68")
 }],
 "loop": true,
-"name": &"boom",
-"speed": 5.0
+"name": &"boom1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yeh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d248q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rtjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1xvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0o22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lrlq")
+}],
+"loop": true,
+"name": &"boom2",
+"speed": 10.0
 }]
 
 [node name="Node" type="Node2D"]
@@ -58,8 +105,8 @@ script = ExtResource("1_gjvlc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0yeh4")
-animation = &"boom"
-frame_progress = 0.821255
+animation = &"boom2"
+frame_progress = 0.295916
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.8

@@ -20,7 +20,7 @@ func _ready():
 	HEIGHT = used_rect.size.y
 
 	setup_safe_spots()
-	# spawn_random_brick()
+	spawn_random_brick()
 
 func setup_safe_spots():
 	safe_spots.clear()
