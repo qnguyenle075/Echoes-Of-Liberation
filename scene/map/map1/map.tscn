@@ -1560,7 +1560,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAATAAMAAAAAAAEAAAATAAMAAAAAAAIAAAATAAM
 tile_set = SubResource("TileSet_ihkbp")
 
 [node name="player1" parent="." groups=["players"] instance=ExtResource("2_wpp1k")]
-position = Vector2(73, 72)
+position = Vector2(359, 224)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player1") groups=["players"] instance=ExtResource("5_3tgtn")]
 position = Vector2(423, 222)

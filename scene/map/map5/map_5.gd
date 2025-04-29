@@ -64,5 +64,5 @@ func spawn_random_brick():
 				continue
 
 			# Spawn Brick ngẫu nhiên 85% tỉ lệ
-			if rng.randf() < 0.8:
+			if rng.randf() < 0.75:
 				BrickTileMap.set_cell(tile_pos, 0, Vector2i(22,0))
