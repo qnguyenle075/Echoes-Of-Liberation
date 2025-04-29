@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qe3eoksfcpu0"
+path="res://.godot/imported/Theme Sound (Giai phong mien Nam 30-4).ogg-f7f37b75a28d0df09824768bb6cd748c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Sound/Theme Sound (Giai phong mien Nam 30-4).ogg"
+dest_files=["res://.godot/imported/Theme Sound (Giai phong mien Nam 30-4).ogg-f7f37b75a28d0df09824768bb6cd748c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
