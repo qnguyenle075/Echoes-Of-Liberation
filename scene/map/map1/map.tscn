@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_wpp1k"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="2_wpp1k"]
 [ext_resource type="PackedScene" uid="uid://hgvdjh0lq58h" path="res://scene/character/player2/player2.tscn" id="4_4wnb2"]
-[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/enemy/enemy.tscn" id="5_3tgtn"]
+[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="5_3tgtn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kwciy"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
