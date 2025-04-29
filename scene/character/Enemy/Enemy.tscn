@@ -1,13 +1,14 @@
-[gd_scene load_steps=43 format=3 uid="uid://bs8gu5htu00pk"]
+[gd_scene load_steps=44 format=3 uid="uid://bs8gu5htu00pk"]
 
-[ext_resource type="Texture2D" uid="uid://bdumiycr13gbj" path="res://Assets/Enemies/IDLE/SMS_Soldier_IDLE_WEST_strip4.png" id="1_106yf"]
-[ext_resource type="Texture2D" uid="uid://cfkspbqhri88o" path="res://Assets/Enemies/IDLE/SMS_Soldier_IDLE_EAST_strip4.png" id="2_711mf"]
-[ext_resource type="Texture2D" uid="uid://cln72cwrj4fg3" path="res://Assets/Enemies/IDLE/SMS_Soldier_IDLE_NORTH_strip4.png" id="3_w3d0v"]
-[ext_resource type="Texture2D" uid="uid://cbw078rqufdgj" path="res://Assets/Enemies/IDLE/SMS_Soldier_SOUTH_strip4.png" id="4_lm85r"]
-[ext_resource type="Texture2D" uid="uid://dyv7ii3h7ingt" path="res://Assets/Enemies/RUN/SMS_Soldier_RUN_SOUTH_strip4.png" id="5_23g6a"]
-[ext_resource type="Texture2D" uid="uid://cjh8pgfddmo0a" path="res://Assets/Enemies/RUN/SMS_Soldier_RUN_WEST_strip4.png" id="6_hm477"]
-[ext_resource type="Texture2D" uid="uid://bmp0w3w73hlhu" path="res://Assets/Enemies/RUN/SMS_Soldier_RUN_EAST_strip4.png" id="7_p7xrw"]
-[ext_resource type="Texture2D" uid="uid://crfk3lv7s6ylx" path="res://Assets/Enemies/RUN/SMS_Soldier_RUN_NORTH_strip4.png" id="8_y1cc8"]
+[ext_resource type="Texture2D" uid="uid://bdumiycr13gbj" path="res://assets/Enemies/IDLE/SMS_Soldier_IDLE_WEST_strip4.png" id="1_106yf"]
+[ext_resource type="Script" uid="uid://qan5vrscnkkj" path="res://scene/character/Enemy/enemy.gd" id="1_uhcuf"]
+[ext_resource type="Texture2D" uid="uid://cfkspbqhri88o" path="res://assets/Enemies/IDLE/SMS_Soldier_IDLE_EAST_strip4.png" id="2_711mf"]
+[ext_resource type="Texture2D" uid="uid://cln72cwrj4fg3" path="res://assets/Enemies/IDLE/SMS_Soldier_IDLE_NORTH_strip4.png" id="3_w3d0v"]
+[ext_resource type="Texture2D" uid="uid://cbw078rqufdgj" path="res://assets/Enemies/IDLE/SMS_Soldier_SOUTH_strip4.png" id="4_lm85r"]
+[ext_resource type="Texture2D" uid="uid://dyv7ii3h7ingt" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_SOUTH_strip4.png" id="5_23g6a"]
+[ext_resource type="Texture2D" uid="uid://cjh8pgfddmo0a" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_WEST_strip4.png" id="6_hm477"]
+[ext_resource type="Texture2D" uid="uid://bmp0w3w73hlhu" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_EAST_strip4.png" id="7_p7xrw"]
+[ext_resource type="Texture2D" uid="uid://crfk3lv7s6ylx" path="res://assets/Enemies/RUN/SMS_Soldier_RUN_NORTH_strip4.png" id="8_y1cc8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23g6a"]
 
@@ -279,6 +280,9 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_uhcuf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_23g6a")
@@ -286,3 +290,19 @@ shape = SubResource("CapsuleShape2D_23g6a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kjkdt")
 animation = &"Run_Up"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="UpdateAITimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="PlantBombTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BombCooldownTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="UpdateAITimer" to="." method="update_ai_decision"]
+[connection signal="timeout" from="PlantBombTimer" to="." method="_on_plant_bomb_timer_timeout"]
+[connection signal="timeout" from="BombCooldownTimer" to="." method="_on_bomb_cooldown_timer_timeout"]
