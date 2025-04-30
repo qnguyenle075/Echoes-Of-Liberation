@@ -11,7 +11,7 @@ func _ready():
 	elif current_map.is_in_group("map4"):
 		$AnimatedSprite2D.play("boom4")
 	elif current_map.is_in_group("map5"):
-		$AnimatedSprite2D.play("boom2")
+		$AnimatedSprite2D.play("boom5")
 	else:
 		$AnimatedSprite2D.play("boom1")
 	$Timer.timeout.connect(func(): queue_free())

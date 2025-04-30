@@ -705,6 +705,7 @@ texture = ExtResource("1_wpp1k")
 5:7/0 = 0
 6:7/0 = 0
 7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:7/0 = 0
 9:7/0 = 0
 10:7/0 = 0
@@ -1567,5 +1568,6 @@ position = Vector2(423, 222)
 player1 = NodePath("../player1")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 position = Vector2(394, 198)
 navigation_polygon = SubResource("NavigationPolygon_3tgtn")
