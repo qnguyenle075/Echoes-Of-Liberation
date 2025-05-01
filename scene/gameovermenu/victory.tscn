@@ -1,16 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://3inx3sxqjxcp"]
+[gd_scene load_steps=16 format=3 uid="uid://bmowpfkqfodov"]
 
-[ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_0j2cy"]
-[ext_resource type="Script" uid="uid://dkxn46w1cm5jd" path="res://scene/gameovermenu/gameover.gd" id="3_73nri"]
-[ext_resource type="Texture2D" uid="uid://b4mmlocw1ln1s" path="res://assets/Background/2.png" id="3_g01ke"]
-[ext_resource type="Texture2D" uid="uid://1cmhkwpggyyb" path="res://assets/Background/3.png" id="4_5txfr"]
-[ext_resource type="Texture2D" uid="uid://cy1ci2yqhmuiq" path="res://assets/Background/4.png" id="5_4qitx"]
-[ext_resource type="Texture2D" uid="uid://yvf73m4mytl4" path="res://assets/Background/5.png" id="6_eo0l8"]
-[ext_resource type="Texture2D" uid="uid://cxpstvevynh7e" path="res://assets/Background/6.png" id="7_poae7"]
-[ext_resource type="FontFile" uid="uid://dxeabgdg81rfw" path="res://assets/font/m5x7.ttf" id="9_f8o8w"]
-[ext_resource type="Texture2D" uid="uid://dxeqa0nckosqt" path="res://assets/Background/triangle.png" id="10_efrn3"]
-[ext_resource type="Texture2D" uid="uid://bl5scr3agm64k" path="res://assets/Background/ChatGPT Image 16_25_12 1 thg 5, 2025.png" id="11_0j2cy"]
-[ext_resource type="Texture2D" uid="uid://dbwlclf5lcr0x" path="res://assets/Background/triangle-usd.png" id="11_tyiji"]
+[ext_resource type="Script" uid="uid://dkxn46w1cm5jd" path="res://scene/gameovermenu/gameover.gd" id="1_ukno4"]
+[ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_vkphr"]
+[ext_resource type="Texture2D" uid="uid://b4mmlocw1ln1s" path="res://assets/Background/2.png" id="3_jee5d"]
+[ext_resource type="Texture2D" uid="uid://1cmhkwpggyyb" path="res://assets/Background/3.png" id="4_mvbru"]
+[ext_resource type="Texture2D" uid="uid://cy1ci2yqhmuiq" path="res://assets/Background/4.png" id="5_qp4op"]
+[ext_resource type="Texture2D" uid="uid://yvf73m4mytl4" path="res://assets/Background/5.png" id="6_qus3o"]
+[ext_resource type="Texture2D" uid="uid://cxpstvevynh7e" path="res://assets/Background/6.png" id="7_bwand"]
+[ext_resource type="FontFile" uid="uid://dxeabgdg81rfw" path="res://assets/font/m5x7.ttf" id="8_cm73v"]
+[ext_resource type="Texture2D" uid="uid://dxeqa0nckosqt" path="res://assets/Background/triangle.png" id="9_fsxa0"]
+[ext_resource type="Texture2D" uid="uid://dbwlclf5lcr0x" path="res://assets/Background/triangle-usd.png" id="10_hyj1j"]
+[ext_resource type="Texture2D" uid="uid://cxkv1gfou1mr0" path="res://assets/Background/ssad.png" id="11_ukno4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn3j6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -25,37 +25,37 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("3_73nri")
+script = ExtResource("1_ukno4")
 
 [node name="bg1" type="Sprite2D" parent="."]
 position = Vector2(253.2, 146.8)
 scale = Vector2(0.95, 0.95)
-texture = ExtResource("2_0j2cy")
+texture = ExtResource("2_vkphr")
 
 [node name="bg2" type="Sprite2D" parent="."]
 position = Vector2(253.2, 146.8)
 scale = Vector2(0.925, 0.925)
-texture = ExtResource("3_g01ke")
+texture = ExtResource("3_jee5d")
 
 [node name="bg3" type="Sprite2D" parent="."]
 position = Vector2(253.2, 146.8)
 scale = Vector2(0.925, 0.925)
-texture = ExtResource("4_5txfr")
+texture = ExtResource("4_mvbru")
 
 [node name="bg4" type="Sprite2D" parent="."]
 position = Vector2(253.2, 146.8)
 scale = Vector2(0.925, 0.925)
-texture = ExtResource("5_4qitx")
+texture = ExtResource("5_qp4op")
 
 [node name="bg5" type="Sprite2D" parent="."]
 position = Vector2(253.2, 146.8)
 scale = Vector2(0.925, 0.925)
-texture = ExtResource("6_eo0l8")
+texture = ExtResource("6_qus3o")
 
 [node name="bg6" type="Sprite2D" parent="."]
 position = Vector2(253.2, 146.8)
 scale = Vector2(0.925, 0.925)
-texture = ExtResource("7_poae7")
+texture = ExtResource("7_bwand")
 
 [node name="UIAnchor" type="Control" parent="."]
 layout_mode = 3
@@ -72,7 +72,7 @@ offset_top = 22.0
 offset_right = 19.0
 offset_bottom = 30.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("9_f8o8w")
+theme_override_fonts/font = ExtResource("8_cm73v")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/hover = SubResource("StyleBoxFlat_qn3j6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gety0")
@@ -84,7 +84,7 @@ offset_top = 5.0
 offset_right = 23.0
 offset_bottom = 13.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("9_f8o8w")
+theme_override_fonts/font = ExtResource("8_cm73v")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/hover = SubResource("StyleBoxFlat_q4fsb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4cjg")
@@ -92,18 +92,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_r4cjg")
 [node name="triangle" type="Sprite2D" parent="UIAnchor"]
 position = Vector2(39, 3)
 scale = Vector2(0.057, 0.04)
-texture = ExtResource("10_efrn3")
+texture = ExtResource("9_fsxa0")
 
 [node name="triangle-usd" type="Sprite2D" parent="UIAnchor"]
 position = Vector2(39, 42)
 scale = Vector2(0.0569128, 0.04)
-texture = ExtResource("11_tyiji")
+texture = ExtResource("10_hyj1j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(248, 104)
-scale = Vector2(0.474399, 0.429811)
-texture = ExtResource("11_0j2cy")
+position = Vector2(256, 144)
+scale = Vector2(0.602771, 0.509867)
+texture = ExtResource("11_ukno4")
 
 [connection signal="pressed" from="UIAnchor/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIAnchor/Menu" to="." method="_on_play_button_pressed"]

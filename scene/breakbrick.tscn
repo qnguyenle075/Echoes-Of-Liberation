@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://d03qkcsv8rdj"]
+[gd_scene load_steps=37 format=3 uid="uid://d03qkcsv8rdj"]
 
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_bnhm6"]
 [ext_resource type="Script" uid="uid://ct30m0hf32bpl" path="res://scene/breakbrick.gd" id="1_gjvlc"]
 [ext_resource type="Texture2D" uid="uid://2bt3tjfscvpo" path="res://assets/Terrain/s.png" id="3_kj8kt"]
+[ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="4_cwuri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gjvlc"]
 atlas = ExtResource("1_bnhm6")
@@ -53,28 +54,32 @@ atlas = ExtResource("3_kj8kt")
 region = Rect2(86, 30, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q1tc"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(112, 32, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(160, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7mww"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(128, 32, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(176, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ap8ik"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(144, 32, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(192, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ne0t0"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(112, 48, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(208, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vct64"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(128, 48, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(224, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gye3v"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(144, 48, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(240, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l7j6"]
+atlas = ExtResource("4_cwuri")
+region = Rect2(256, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t0dp"]
 atlas = ExtResource("1_bnhm6")
@@ -190,10 +195,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gye3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l7j6")
 }],
 "loop": true,
 "name": &"boom3",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,7 +255,8 @@ script = ExtResource("1_gjvlc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0yeh4")
-animation = &"boom4"
+animation = &"boom3"
+frame_progress = 0.433879
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.8
