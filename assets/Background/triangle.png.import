@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cath0x3g7kl7s"
-path="res://.godot/imported/tile_0094_water21.png-7a1eff3fe37fe2933dbf410c70112a37.ctex"
+uid="uid://dxeqa0nckosqt"
+path="res://.godot/imported/triangle.png-22b9a82ed0469ddde2882956a4904f89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Water/tile_0094_water21.png"
-dest_files=["res://.godot/imported/tile_0094_water21.png-7a1eff3fe37fe2933dbf410c70112a37.ctex"]
+source_file="res://assets/Background/triangle.png"
+dest_files=["res://.godot/imported/triangle.png-22b9a82ed0469ddde2882956a4904f89.ctex"]
 
 [params]
 
