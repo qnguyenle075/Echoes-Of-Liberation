@@ -135,7 +135,7 @@ func _on_button_pressed(index_pressed: int):
 
 func _on_play_button_pressed():
 	is_animating = true
-	get_tree().change_scene_to_file("res://scene/map/map1/map.tscn")
+	get_tree().change_scene_to_file("res://scene/mainmenu/main.tscn")
 
 func _on_exit_button_pressed():
 	get_tree().quit()
