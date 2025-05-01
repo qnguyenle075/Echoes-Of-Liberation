@@ -4,7 +4,7 @@ extends CharacterBody2D
 signal planting_bomb_started(position: Vector2) # Phát ra khi bắt đầu đặt bom, kèm vị trí
 signal planting_bomb_finished             # Phát ra khi hành động đặt bom hoàn tất
 
-const SPEED = 100.0
+const SPEED = 60.0
 @export var input_prefix : String = "p1"
 @onready var BombScene = preload("res://scene/bomb/bomb.tscn") # Đảm bảo đường dẫn đúng
 @onready var animated_sprite = $AnimatedSprite2D
@@ -93,5 +93,8 @@ func die():
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	animated_sprite.play("die")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(3.0).timeout
+	
 	queue_free()
+	
+	get_tree().change_scene_to_file("res://scene/gameovermenu/gameover.tscn")

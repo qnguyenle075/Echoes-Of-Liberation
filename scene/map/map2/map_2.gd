@@ -66,3 +66,10 @@ func spawn_random_brick():
 			# Spawn Brick ngẫu nhiên 85% tỉ lệ
 			if rng.randf() < 0.75:
 				BrickTileMap.set_cell(tile_pos, 0, Vector2i(0,0))
+
+func _process(_delta):
+	# Kiểm tra xem còn enemy nào trong nhóm "enemies" không
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	if enemies.size() == 0:
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://scene/gameovermenu/victory.tscn")

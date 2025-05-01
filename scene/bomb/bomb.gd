@@ -8,7 +8,7 @@ signal bomb_exploded
 @onready var BrickExplosionScene = preload("res://scene/breakbrick.tscn")
 
 func _ready():
-	
+	add_to_group("bombs")
 	collisionShape.disabled = true
 	$thoigianvacham.start()
 	$thoigianvacham.timeout.connect(_on_delay_collision_timeout)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=3 uid="uid://hgvdjh0lq58h"]
 
-[ext_resource type="Script" uid="uid://dfbdkphwq4t03" path="res://scene/character/player/player.gd" id="1_m3vcc"]
+[ext_resource type="Script" uid="uid://c8mqhse4db3nf" path="res://scene/character/player2/player2.gd" id="1_26ll8"]
 [ext_resource type="Texture2D" uid="uid://bd7djc27clitv" path="res://assets/Main Characters/player/die/NES_Soldier_CLIMB_SOUTH_strip4.png" id="2_26ll8"]
 [ext_resource type="Texture2D" uid="uid://bxpi71mvfm3ng" path="res://assets/Main Characters/player/IDLE/NES_Soldier_IDLE_EAST_strip4.png" id="2_g7k36"]
 [ext_resource type="Texture2D" uid="uid://bd5if46dbf4o8" path="res://assets/Main Characters/player/IDLE/NES_Soldier_IDLE_NORTH_strip4.png" id="3_a4qxn"]
@@ -315,8 +315,7 @@ z_index = 1
 texture_filter = 1
 scale = Vector2(0.9, 0.9)
 collision_mask = 30
-script = ExtResource("1_m3vcc")
-input_prefix = "p2"
+script = ExtResource("1_26ll8")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(0, 0, 0, 1)

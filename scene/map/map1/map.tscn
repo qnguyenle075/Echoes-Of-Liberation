@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c2esyxpt1alxg" path="res://scene/map/map1/map.gd" id="1_ihkbp"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_wpp1k"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="2_wpp1k"]
-[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="5_3tgtn"]
+[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/enemy2/enemy2.tscn" id="4_kwciy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kwciy"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -1563,11 +1563,10 @@ tile_set = SubResource("TileSet_ihkbp")
 [node name="player1" parent="." groups=["players"] instance=ExtResource("2_wpp1k")]
 position = Vector2(359, 224)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("player1") groups=["players"] instance=ExtResource("5_3tgtn")]
-position = Vector2(423, 222)
-player1 = NodePath("../player1")
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 position = Vector2(394, 198)
 navigation_polygon = SubResource("NavigationPolygon_3tgtn")
+
+[node name="Enemy" parent="." instance=ExtResource("4_kwciy")]
+position = Vector2(422, 223)
