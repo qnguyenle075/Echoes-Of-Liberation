@@ -23,7 +23,7 @@ const VERTICAL_OFFSET := -10
 # Các trạng thái menu có thể có
 enum MenuState { MAIN, MODE_SELECT, DIFFICULTY_SELECT } # Bao gồm chọn độ khó
 var current_menu_state = MenuState.MAIN
-
+var previous_menu_state: MenuState = MenuState.MAIN
 # Mảng chứa các elements cho từng menu (Dùng Control vì Button là con của Control)
 var main_menu_options: Array[Control] = []
 var mode_select_options: Array[Control] = []
@@ -75,8 +75,8 @@ func _ready():
 
 		if button == playButton: button.text = "Play"
 		elif button == exitButton: button.text = "Quit"
-		elif button == vsPlayerButton: button.text = "2P"
-		elif button == vsAIButton: button.text = "AI"
+		elif button == vsPlayerButton: button.text = "PVP"
+		elif button == vsAIButton: button.text = "PVE "
 		elif button == easyButton: button.text = "Easy" # Đặt text cho nút mới
 		elif button == hardButton: button.text = "Hard" # Đặt text cho nút mới
 
@@ -127,6 +127,11 @@ func get_current_options() -> Array[Control]:
 
 
 func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel"):  # Nhấn ESC
+		if current_menu_state != MenuState.MAIN:
+			transition_to_menu(previous_menu_state)
+			get_viewport().set_input_as_handled()
+			return
 	if not is_inside_tree(): return
 	if is_animating: return
 
@@ -222,8 +227,10 @@ func _on_transition_animation_finished(element_that_animated_out: Control, is_me
 	if element_that_animated_out and is_instance_valid(element_that_animated_out):
 		element_that_animated_out.visible = false # Ẩn element cũ
 
-	if is_menu_transition: # Chỉ thực hiện khi chuyển menu
+	if is_menu_transition:
+		previous_menu_state = current_menu_state # Chỉ thực hiện khi chuyển menu
 		current_menu_state = target_state
+		
 		selected_index = 0
 		var options_in = get_current_options()
 		if options_in.is_empty(): return

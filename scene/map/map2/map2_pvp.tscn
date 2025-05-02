@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://byupui4hphg6g"]
+[gd_scene load_steps=27 format=4 uid="uid://byupui4hphg6g"]
 
 [ext_resource type="Script" uid="uid://cgeud33age2bn" path="res://scene/map/map2/map_2.gd" id="1_cvlpw"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_hm1eg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://uyvv4rdeedxw" path="res://assets/Terrain/Tree.png" id="8_xooq3"]
 [ext_resource type="PackedScene" uid="uid://80esnj1y4d1r" path="res://scene/character/player1/player1.tscn" id="9_m6f71"]
 [ext_resource type="PackedScene" uid="uid://hgvdjh0lq58h" path="res://scene/character/player2/player2.tscn" id="10_m6f71"]
+[ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="11_rjxuw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvlpw"]
 texture = ExtResource("1_hm1eg")
@@ -7436,5 +7437,7 @@ tile_set = SubResource("TileSet_br746")
 [node name="player1" parent="." groups=["enemies", "players"] instance=ExtResource("9_m6f71")]
 position = Vector2(153, 64)
 
-[node name="CharacterBody2D" parent="." groups=["enemies", "players"] instance=ExtResource("10_m6f71")]
+[node name="player2" parent="." groups=["enemies", "players"] instance=ExtResource("10_m6f71")]
 position = Vector2(344, 226)
+
+[node name="Pausemenu" parent="." instance=ExtResource("11_rjxuw")]

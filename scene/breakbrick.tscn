@@ -1,33 +1,37 @@
-[gd_scene load_steps=37 format=3 uid="uid://d03qkcsv8rdj"]
+[gd_scene load_steps=39 format=3 uid="uid://d03qkcsv8rdj"]
 
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_bnhm6"]
 [ext_resource type="Script" uid="uid://ct30m0hf32bpl" path="res://scene/breakbrick.gd" id="1_gjvlc"]
 [ext_resource type="Texture2D" uid="uid://2bt3tjfscvpo" path="res://assets/Terrain/s.png" id="3_kj8kt"]
 [ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="4_cwuri"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gjvlc"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(112, 128, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kj8kt"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(128, 128, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_cwuri"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(144, 128, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(16, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1saf"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(112, 144, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(32, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x43iq"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(128, 144, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(48, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xlk68"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(144, 144, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfbbl"]
+atlas = ExtResource("4_cwuri")
+region = Rect2(80, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aewvw"]
+atlas = ExtResource("4_cwuri")
+region = Rect2(96, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uokq1"]
+atlas = ExtResource("4_cwuri")
+region = Rect2(112, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0yeh4"]
 atlas = ExtResource("3_kj8kt")
@@ -82,28 +86,32 @@ atlas = ExtResource("4_cwuri")
 region = Rect2(256, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t0dp"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(16, 32, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(208, 576, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xh3k"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(32, 32, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(224, 576, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_15gni"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(48, 32, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(240, 576, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5deyj"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(16, 48, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(256, 576, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rsum"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(32, 48, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(272, 576, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cvja"]
-atlas = ExtResource("1_bnhm6")
-region = Rect2(48, 48, 16, 16)
+atlas = ExtResource("4_cwuri")
+region = Rect2(288, 576, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vfin"]
+atlas = ExtResource("4_cwuri")
+region = Rect2(304, 576, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f44nd"]
 atlas = ExtResource("1_bnhm6")
@@ -133,12 +141,6 @@ region = Rect2(384, 32, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gjvlc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kj8kt")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_cwuri")
 }, {
 "duration": 1.0,
@@ -149,10 +151,19 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xlk68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfbbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aewvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uokq1")
 }],
 "loop": true,
 "name": &"boom1",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -221,6 +232,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5cvja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vfin")
 }],
 "loop": true,
 "name": &"boom4",
@@ -255,8 +269,7 @@ script = ExtResource("1_gjvlc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0yeh4")
-animation = &"boom3"
-frame_progress = 0.433879
+animation = &"boom4"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.8

@@ -64,14 +64,16 @@ func _ready():
 
 
 func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://scene/mainmenu/main.tscn")
 	if map_select_options.is_empty(): return
 
 	var direction = 0
 	var accept_pressed = false
 
-	if event.is_action_pressed("ui_right"): direction = 1
-	elif event.is_action_pressed("ui_left"): direction = -1
-	elif event.is_action_pressed("ui_accept"): accept_pressed = true
+	if event.is_action_pressed("ui_right") or event.is_action_pressed("right_p1") : direction = 1
+	elif event.is_action_pressed("ui_left") or event.is_action_pressed("left_p1"): direction = -1
+	elif event.is_action_pressed("ui_accept") or event.is_action_pressed("boom_p1"): accept_pressed = true
 
 	if direction != 0:
 		get_viewport().set_input_as_handled()
