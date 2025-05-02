@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hiek01arshx8"
+path="res://.godot/imported/Pixelated Reflections(kết thúc game).mp3-1b479c3808ba0d31e0f9bbb9d0429898.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Pixelated Reflections(kết thúc game).mp3"
+dest_files=["res://.godot/imported/Pixelated Reflections(kết thúc game).mp3-1b479c3808ba0d31e0f9bbb9d0429898.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

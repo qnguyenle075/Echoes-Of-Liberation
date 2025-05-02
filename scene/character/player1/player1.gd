@@ -74,6 +74,6 @@ func die():
 	animated_sprite.play("die")
 
 	# Force chờ khoảng 0.5 giây rồi biến mất
-	await get_tree().create_timer(3.0).timeout
+	await Music.play_sfx_and_wait("res://assets/Sound/game_over.wav")
 	queue_free()
 	get_tree().change_scene_to_file("res://scene/gameovermenu/player2win.tscn")

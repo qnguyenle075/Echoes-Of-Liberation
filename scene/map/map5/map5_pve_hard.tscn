@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bybjbmt8e4203"]
+[gd_scene load_steps=22 format=4 uid="uid://bybjbmt8e4203"]
 
 [ext_resource type="Script" uid="uid://cxxp33kupmqa7" path="res://scene/map/map5/map_5.gd" id="1_x4k12"]
 [ext_resource type="Texture2D" uid="uid://cvpr8iq3fakt3" path="res://assets/Terrain/SMS_Stonelands_Tile_Set_Level_Mock_Up.png" id="2_i6rsi"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="7_l32or"]
 [ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="7_x4k12"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="9_i6rsi"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="10_qjh7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkl8c"]
 texture = ExtResource("2_i6rsi")
@@ -3614,3 +3615,5 @@ brick_layer = NodePath("../brick")
 position = Vector2(136, 40)
 
 [node name="Pausemenu" parent="." instance=ExtResource("9_i6rsi")]
+
+[node name="manager" parent="." instance=ExtResource("10_qjh7l")]

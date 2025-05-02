@@ -8,6 +8,7 @@ signal bomb_exploded
 @onready var BrickExplosionScene = preload("res://scene/breakbrick.tscn")
 
 func _ready():
+	Music.play_sfx("res://assets/Sound/place_bomb.wav")
 	add_to_group("bombs")
 	collisionShape.disabled = true
 	$thoigianvacham.start()
@@ -24,6 +25,7 @@ func _on_timeout():
 	explode()
 
 func explode():
+	Music.play_sfx("res://assets/Sound/explosion-312361.mp3")
 	spawn_explosions()
 	emit_signal("bomb_exploded")
 	queue_free()

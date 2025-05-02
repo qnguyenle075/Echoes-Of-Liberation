@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c18q1q6thjuqp"]
+[gd_scene load_steps=15 format=4 uid="uid://c18q1q6thjuqp"]
 
 [ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="1_1bept"]
 [ext_resource type="Script" uid="uid://b1jwm4m3url72" path="res://scene/map/map4/map4.gd" id="1_s1by7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://80esnj1y4d1r" path="res://scene/character/player1/player1.tscn" id="4_iafn1"]
 [ext_resource type="PackedScene" uid="uid://hgvdjh0lq58h" path="res://scene/character/player2/player2.tscn" id="5_fsapv"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="6_fsapv"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="7_5gvbq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdl16"]
 texture = ExtResource("1_1bept")
@@ -6229,3 +6230,5 @@ position = Vector2(152, 64)
 position = Vector2(344, 224)
 
 [node name="Pausemenu" parent="." instance=ExtResource("6_fsapv")]
+
+[node name="manager" parent="." instance=ExtResource("7_5gvbq")]

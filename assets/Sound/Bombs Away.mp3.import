@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dewgmkxfypwf0"
+path="res://.godot/imported/Bombs Away.mp3-f865d2dd4b3f6b92a872971608f797bd.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Bombs Away.mp3"
+dest_files=["res://.godot/imported/Bombs Away.mp3-f865d2dd4b3f6b92a872971608f797bd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bte1oh47pvuhq"]
+[gd_scene load_steps=17 format=3 uid="uid://bte1oh47pvuhq"]
 
-[ext_resource type="Script" uid="uid://8y2qek2axtkl" path="res://scene/gameovermenu/gameover.gd" id="1_4oomh"]
+[ext_resource type="Script" uid="uid://dkxn46w1cm5jd" path="res://scene/gameovermenu/gameover.gd" id="1_4oomh"]
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_oilrh"]
 [ext_resource type="Texture2D" uid="uid://b4mmlocw1ln1s" path="res://assets/Background/2.png" id="3_kuy18"]
 [ext_resource type="Texture2D" uid="uid://1cmhkwpggyyb" path="res://assets/Background/3.png" id="4_3uvuf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxeqa0nckosqt" path="res://assets/Background/triangle.png" id="9_fi7pd"]
 [ext_resource type="Texture2D" uid="uid://dbwlclf5lcr0x" path="res://assets/Background/triangle-usd.png" id="10_c3qd1"]
 [ext_resource type="Texture2D" uid="uid://ceim8d2hjads0" path="res://assets/Background/sadasda.png" id="11_4oomh"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="12_oilrh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn3j6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -104,6 +105,8 @@ texture_filter = 1
 position = Vector2(256, 104)
 scale = Vector2(0.479268, 0.37708)
 texture = ExtResource("11_4oomh")
+
+[node name="manager" parent="." instance=ExtResource("12_oilrh")]
 
 [connection signal="pressed" from="UIAnchor/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIAnchor/Menu" to="." method="_on_play_button_pressed"]

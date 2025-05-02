@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpcrlc5fltwsf"
+path="res://.godot/imported/Victory Reunited.mp3-55b02dcf4fa5525e08355a40fdb117da.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Victory Reunited.mp3"
+dest_files=["res://.godot/imported/Victory Reunited.mp3-55b02dcf4fa5525e08355a40fdb117da.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

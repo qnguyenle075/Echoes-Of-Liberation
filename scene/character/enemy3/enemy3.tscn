@@ -332,6 +332,7 @@ rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_kjkdt")
 animation = &"die"
 autoplay = "Idle__Down"
+frame_progress = 0.243553
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.55556)

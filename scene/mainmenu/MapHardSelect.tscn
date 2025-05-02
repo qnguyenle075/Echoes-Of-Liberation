@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0i0ryo1k4t0n"]
+[gd_scene load_steps=14 format=3 uid="uid://d0i0ryo1k4t0n"]
 
 [ext_resource type="Script" uid="uid://dgkip11u6xodh" path="res://scene/mainmenu/MapHardSelect.gd" id="1_s21ol"]
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_xsr83"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cyjn8oh3plefe" path="res://assets/map pic/map3.png" id="10_c8n03"]
 [ext_resource type="Texture2D" uid="uid://pg1qq1egsuus" path="res://assets/map pic/map4.png" id="11_d3x2l"]
 [ext_resource type="Texture2D" uid="uid://udowrsu6n4od" path="res://assets/map pic/map5.png" id="12_2cufn"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="13_c8icr"]
 
 [node name="MapHardSelect" type="Node2D"]
 script = ExtResource("1_s21ol")
@@ -47,6 +48,7 @@ scale = Vector2(0.925, 0.925)
 texture = ExtResource("7_d3x2l")
 
 [node name="Map1Preview" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(85.578, 83.75)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_uubjd")
@@ -70,3 +72,5 @@ texture = ExtResource("11_d3x2l")
 position = Vector2(332, 189)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_2cufn")
+
+[node name="manager" parent="." instance=ExtResource("13_c8icr")]

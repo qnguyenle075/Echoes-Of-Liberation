@@ -93,7 +93,7 @@ func die():
 	velocity = Vector2.ZERO
 	set_physics_process(false)
 	animated_sprite.play("die")
-	await get_tree().create_timer(3.0).timeout
+	await Music.play_sfx_and_wait("res://assets/Sound/game_over.wav")
 	
 	queue_free()
 	

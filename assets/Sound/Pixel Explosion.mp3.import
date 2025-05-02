@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8hu1bw1elo7g"
+path="res://.godot/imported/Pixel Explosion.mp3-2262344d548b635e2bb86615b847c64e.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Pixel Explosion.mp3"
+dest_files=["res://.godot/imported/Pixel Explosion.mp3-2262344d548b635e2bb86615b847c64e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

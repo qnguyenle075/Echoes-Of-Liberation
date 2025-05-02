@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dh71wl6io5wqx"]
+[gd_scene load_steps=22 format=4 uid="uid://dh71wl6io5wqx"]
 
 [ext_resource type="Script" uid="uid://c2esyxpt1alxg" path="res://scene/map/map1/map.gd" id="1_k07fv"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="2_imcru"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="5_7kahx"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="6_u71cn"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="7_u71cn"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="8_w75wr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kwciy"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -10622,3 +10623,5 @@ brick_layer = NodePath("../brick")
 position = Vector2(152, 64)
 
 [node name="Pausemenu" parent="." instance=ExtResource("7_u71cn")]
+
+[node name="manager" parent="." instance=ExtResource("8_w75wr")]

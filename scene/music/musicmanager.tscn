@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq6pi2tqhqvcl"]
+
+[ext_resource type="Texture2D" uid="uid://dbawnoyp7cowi" path="res://assets/Metal Buttons Icons/sprite_096.png" id="1_ri3k3"]
+[ext_resource type="Script" uid="uid://5w7gbcq7rv8q" path="res://scene/music/musicmanager.gd" id="1_u2o04"]
+[ext_resource type="Texture2D" uid="uid://crokny0o467fv" path="res://assets/Metal Buttons Icons/sprite_098.png" id="2_u2o04"]
+[ext_resource type="Texture2D" uid="uid://dkya3663ur7ue" path="res://assets/Metal Buttons Icons/sprite_111.png" id="3_43erl"]
+[ext_resource type="Texture2D" uid="uid://kydr7vn1roev" path="res://assets/Metal Buttons Icons/sprite_113.png" id="4_y4qum"]
+
+[node name="manager" type="Node"]
+script = ExtResource("1_u2o04")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -40.0
+offset_right = -20.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.545, 0.545)
+
+[node name="sfx" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("1_ri3k3")
+texture_pressed = ExtResource("2_u2o04")
+
+[node name="music" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("3_43erl")
+texture_pressed = ExtResource("4_y4qum")

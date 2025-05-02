@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cjfj2m3ixic8g"]
+[gd_scene load_steps=26 format=4 uid="uid://cjfj2m3ixic8g"]
 
 [ext_resource type="Script" uid="uid://cge1qbxa7uiqa" path="res://scene/map/map3/map_3.gd" id="1_qdos4"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_w0hci"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="7_6sfvf"]
 [ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="8_w0hci"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="10_ag24b"]
+[ext_resource type="PackedScene" uid="uid://nxvdjsqcotgj" path="res://scene/character/enemy3/enemy3.tscn" id="11_n71vs"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="12_qurrd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw0wx"]
 texture = ExtResource("1_w0hci")
@@ -6786,3 +6788,12 @@ wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="Pausemenu" parent="." instance=ExtResource("10_ag24b")]
+visible = false
+
+[node name="Enemy4" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies"] instance=ExtResource("11_n71vs")]
+position = Vector2(216, 96)
+wall_layer = NodePath("../kothepha")
+brick_layer = NodePath("../brick")
+player_path = NodePath("../player1")
+
+[node name="manager" parent="." instance=ExtResource("12_qurrd")]

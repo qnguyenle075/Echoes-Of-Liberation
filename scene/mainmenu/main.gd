@@ -117,6 +117,8 @@ func _ready():
 
 	if is_instance_valid(logo): logo.visible = true # Hiện logo
 	set_process_unhandled_input(true)
+	
+	Music.play_music("res://assets/Sound/Pixel Triumph(menu).mp3")
 
 # Cập nhật hàm này để bao gồm trạng thái mới
 func get_current_options() -> Array[Control]:
@@ -127,7 +129,8 @@ func get_current_options() -> Array[Control]:
 
 
 func _unhandled_input(event: InputEvent):
-	if event.is_action_pressed("ui_cancel"):  # Nhấn ESC
+	if event.is_action_pressed("ui_cancel"): 
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3") # Nhấn ESC
 		if current_menu_state != MenuState.MAIN:
 			transition_to_menu(previous_menu_state)
 			get_viewport().set_input_as_handled()
@@ -143,9 +146,11 @@ func _unhandled_input(event: InputEvent):
 
 	# Chỉ xử lý Lên/Xuống cho các menu nút bấm này
 	if event.is_action_pressed("ui_down") or event.is_action_pressed("down_p1"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		direction = 1
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("ui_up") or event.is_action_pressed("up_p1"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		direction = -1
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("ui_accept") or event.is_action_pressed("boom_p1"):
@@ -156,6 +161,7 @@ func _unhandled_input(event: InputEvent):
 		if selected_index >= 0 and selected_index < current_options.size():
 			var selected_element = current_options[selected_index]
 			if selected_element is Button: # Chỉ emit nếu là Button
+				Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 				selected_element.emit_signal("pressed")
 		return
 
@@ -270,22 +276,27 @@ func _hide_all_menu_elements():
 
 # --- Các hàm xử lý nhấn nút ---
 func _on_play_button_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	transition_to_menu(MenuState.MODE_SELECT)
 
 func _on_exit_button_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	if is_instance_valid(exitButton): exitButton.visible = false
 	get_tree().quit()
 
 func _on_vs_player_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	is_animating = true
 	# !!! THAY ĐỔI ĐƯỜNG DẪN NÀY - SCENE CHO 2P !!!
 	get_tree().change_scene_to_file("res://scene/mainmenu/Map2p.tscn") # Ví dụ
 
 func _on_vs_ai_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	transition_to_menu(MenuState.DIFFICULTY_SELECT) # Chuyển sang chọn độ khó
 
 # --- HÀM XỬ LÝ MỚI CHO ĐỘ KHÓ ---
 func _on_easy_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	print("Difficulty Selected: Easy")
 	# TODO: Lưu độ khó vào Autoload Singleton, ví dụ: GlobalSettings.ai_difficulty = "easy"
 	is_animating = true
@@ -294,6 +305,7 @@ func _on_easy_pressed():
 	get_tree().change_scene_to_file("res://scene/mainmenu/MapEasySelect.tscn") # Ví dụ
 
 func _on_hard_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	print("Difficulty Selected: Hard")
 	# TODO: Lưu độ khó vào Autoload Singleton, ví dụ: GlobalSettings.ai_difficulty = "hard"
 	is_animating = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1g7hdm4cra1a"]
+[gd_scene load_steps=20 format=3 uid="uid://c1g7hdm4cra1a"]
 
 [ext_resource type="Script" uid="uid://dclt82y1xuy5v" path="res://scene/mainmenu/main.gd" id="1_v0l8b"]
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_7baaq"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dxeabgdg81rfw" path="res://assets/font/m5x7.ttf" id="9_r4cjg"]
 [ext_resource type="Texture2D" uid="uid://dxeqa0nckosqt" path="res://assets/Background/triangle.png" id="10_qn3j6"]
 [ext_resource type="Texture2D" uid="uid://dbwlclf5lcr0x" path="res://assets/Background/triangle-usd.png" id="11_q4fsb"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="12_q4fsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn3j6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -149,6 +150,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_r4cjg")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_5tbsy")
+
+[node name="manager" parent="." instance=ExtResource("12_q4fsb")]
 
 [connection signal="pressed" from="UIAnchor/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIAnchor/PlayButton" to="." method="_on_play_button_pressed"]

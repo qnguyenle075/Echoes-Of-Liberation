@@ -11,6 +11,8 @@ func _ready():
 	resume_button.pressed.connect(_on_resume_pressed)
 	quit_button.pressed.connect(_on_quit_pressed)
 	play_again_button.pressed.connect(_on_play_again_pressed)  
+	
+	Music.play_music("res://assets/Sound/Pixel Frenzy.mp3")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -22,6 +24,7 @@ func _process(_delta):
 		
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		if get_tree().paused and pause_menu.visible:
 			resume_game()  # Nếu đang pause và menu đang mở → resume
 		else:
@@ -37,12 +40,15 @@ func resume_game():
 	pause_menu.visible = false
 
 func _on_resume_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	resume_game()
 	
 func _on_play_again_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	get_tree().paused = false
 	get_tree().reload_current_scene()  # Load lại scene hiện tại
 
 func _on_quit_pressed():
+	Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scene/mainmenu/main.tscn")

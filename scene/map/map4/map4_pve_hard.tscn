@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bqfq7xtstvfrk"]
+[gd_scene load_steps=15 format=4 uid="uid://bqfq7xtstvfrk"]
 
 [ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="1_athra"]
 [ext_resource type="Script" uid="uid://b1jwm4m3url72" path="res://scene/map/map4/map4.gd" id="1_j0dmt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="3_yh3io"]
 [ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="4_j0dmt"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="6_1qtxr"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="7_jjafa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdl16"]
 texture = ExtResource("1_athra")
@@ -6250,3 +6251,5 @@ wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="Pausemenu" parent="." instance=ExtResource("6_1qtxr")]
+
+[node name="manager" parent="." instance=ExtResource("7_jjafa")]

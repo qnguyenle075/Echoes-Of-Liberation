@@ -52,6 +52,8 @@ func _ready():
 			button.visible = false
 
 	set_process_unhandled_input(true)
+	
+	Music.play_music("res://assets/Sound/Pixelated Reflections(kết thúc game).mp3")
 
 func _unhandled_input(event: InputEvent):
 	if not is_inside_tree():
@@ -62,12 +64,15 @@ func _unhandled_input(event: InputEvent):
 
 	var direction = 0
 	if event.is_action_pressed("ui_down") or event.is_action_pressed("down_p1"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		direction = 1
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("ui_up") or event.is_action_pressed("up_p1"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		direction = -1
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("ui_accept") or event.is_action_pressed("boom_p1"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		if selected_index >= 0 and selected_index < menu_options.size():
 			# Đảo 2 dòng này: Đánh dấu xử lý TRƯỚC khi emit signal
 			get_viewport().set_input_as_handled()

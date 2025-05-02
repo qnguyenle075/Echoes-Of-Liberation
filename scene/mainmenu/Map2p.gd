@@ -61,18 +61,24 @@ func _ready():
 	selected_index = 0
 	update_selection_visuals(true) # Đặt scale/modulate ban đầu ngay lập tức
 	set_process_unhandled_input(true)
-
+	
+	Music.play_music("res://assets/Sound/Pixel Triumph(menu).mp3")
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_cancel"):
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
 		get_tree().change_scene_to_file("res://scene/mainmenu/main.tscn")
 	if map_select_options.is_empty(): return
 
 	var direction = 0
 	var accept_pressed = false
 
-	if event.is_action_pressed("ui_right") or event.is_action_pressed("right_p1") : direction = 1
-	elif event.is_action_pressed("ui_left") or event.is_action_pressed("left_p1"): direction = -1
+	if event.is_action_pressed("ui_right") or event.is_action_pressed("right_p1") : 
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
+		direction = 1
+	elif event.is_action_pressed("ui_left") or event.is_action_pressed("left_p1"): 
+		Music.play_sfx("res://assets/Sound/retro-select-236670.mp3")
+		direction = -1
 	elif event.is_action_pressed("ui_accept") or event.is_action_pressed("boom_p1"): accept_pressed = true
 
 	if direction != 0:
@@ -132,6 +138,7 @@ func _load_selected_map():
 		var scene_path = map_data[node_name]
 		print("Loading EASY map: %s (Path: %s)" % [node_name, scene_path])
 		set_process_unhandled_input(false)
+		await Music.play_sfx_and_wait("res://assets/Sound/level_start.wav")
 		var error = get_tree().change_scene_to_file(scene_path)
 		if error != OK:
 			printerr("Failed to change scene to: %s. Error code: %s" % [scene_path, error])

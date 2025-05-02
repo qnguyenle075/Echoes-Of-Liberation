@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8cm8x1yhfpih"
+path="res://.godot/imported/Pixel Frenzy.mp3-81f5f679ef5e144e54ad677b852467de.mp3str"
+
+[deps]
+
+source_file="res://assets/Sound/Pixel Frenzy.mp3"
+dest_files=["res://.godot/imported/Pixel Frenzy.mp3-81f5f679ef5e144e54ad677b852467de.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

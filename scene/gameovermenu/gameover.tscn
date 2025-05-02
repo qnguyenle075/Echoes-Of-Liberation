@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://3inx3sxqjxcp"]
+[gd_scene load_steps=17 format=3 uid="uid://3inx3sxqjxcp"]
 
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_0j2cy"]
-[ext_resource type="Script" uid="uid://8y2qek2axtkl" path="res://scene/gameovermenu/gameover.gd" id="3_73nri"]
+[ext_resource type="Script" uid="uid://dkxn46w1cm5jd" path="res://scene/gameovermenu/gameover.gd" id="3_73nri"]
 [ext_resource type="Texture2D" uid="uid://b4mmlocw1ln1s" path="res://assets/Background/2.png" id="3_g01ke"]
 [ext_resource type="Texture2D" uid="uid://1cmhkwpggyyb" path="res://assets/Background/3.png" id="4_5txfr"]
 [ext_resource type="Texture2D" uid="uid://cy1ci2yqhmuiq" path="res://assets/Background/4.png" id="5_4qitx"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxeqa0nckosqt" path="res://assets/Background/triangle.png" id="10_efrn3"]
 [ext_resource type="Texture2D" uid="uid://bl5scr3agm64k" path="res://assets/Background/ChatGPT Image 16_25_12 1 thg 5, 2025.png" id="11_0j2cy"]
 [ext_resource type="Texture2D" uid="uid://dbwlclf5lcr0x" path="res://assets/Background/triangle-usd.png" id="11_tyiji"]
+[ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="12_g01ke"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn3j6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -104,6 +105,8 @@ texture_filter = 1
 position = Vector2(248, 104)
 scale = Vector2(0.474399, 0.429811)
 texture = ExtResource("11_0j2cy")
+
+[node name="manager" parent="." instance=ExtResource("12_g01ke")]
 
 [connection signal="pressed" from="UIAnchor/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIAnchor/Menu" to="." method="_on_play_button_pressed"]

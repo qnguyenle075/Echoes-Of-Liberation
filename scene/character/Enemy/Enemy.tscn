@@ -205,15 +205,15 @@ collision_mask = 31
 script = ExtResource("1_uhcuf")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 5.0
+offset_left = 10.0
 offset_top = 8.0
-offset_right = 10.0
-offset_bottom = 18.0
+offset_right = 15.0
+offset_bottom = 28.0
 rotation = 1.5708
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kjkdt")
-animation = &"Run_Down"
+animation = &"Run_Right"
 autoplay = "Idle__Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
