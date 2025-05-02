@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dfox5c2kwfgg6"]
+[gd_scene load_steps=45 format=3 uid="uid://dfox5c2kwfgg6"]
 
 [ext_resource type="Script" uid="uid://de086yvk88v3u" path="res://scene/bomb/explosion.gd" id="1_j4sxf"]
 [ext_resource type="Texture2D" uid="uid://c5o5xibnibr5y" path="res://assets/explosion/center.png" id="1_vxas0"]
@@ -281,8 +281,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxas0"]
-radius = 8.0
-height = 18.0
+radius = 2.5
+height = 15.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m610o"]
+radius = 2.5
+height = 13.3333
 
 [node name="explosion" type="Area2D"]
 scale = Vector2(1.2, 1.2)
@@ -294,12 +298,15 @@ script = ExtResource("1_j4sxf")
 texture_filter = 1
 scale = Vector2(0.305, 0.305)
 sprite_frames = SubResource("SpriteFrames_exbut")
-animation = &"center"
+animation = &"down"
 autoplay = "center"
-frame_progress = 0.214264
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_vxas0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_m610o")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

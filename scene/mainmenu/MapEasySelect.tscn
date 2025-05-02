@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn11ayvrct5tr"]
+[gd_scene load_steps=13 format=3 uid="uid://bn11ayvrct5tr"]
 
 [ext_resource type="Script" uid="uid://ldgjxg3tyagw" path="res://scene/mainmenu/MapEasySelect.gd" id="1_viffs"]
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_4eri7"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cy1ci2yqhmuiq" path="res://assets/Background/4.png" id="5_st1fe"]
 [ext_resource type="Texture2D" uid="uid://yvf73m4mytl4" path="res://assets/Background/5.png" id="6_2886t"]
 [ext_resource type="Texture2D" uid="uid://cxpstvevynh7e" path="res://assets/Background/6.png" id="7_2p183"]
-[ext_resource type="Texture2D" uid="uid://b8us30o263eij" path="res://assets/map pic/map2.jpg" id="8_t82m6"]
-[ext_resource type="Texture2D" uid="uid://c2tottqiadljt" path="res://assets/map pic/map3.jpg" id="9_h3y2y"]
-[ext_resource type="Texture2D" uid="uid://ef68pc3r6mia" path="res://assets/map pic/map5.jpg" id="10_awrcs"]
+[ext_resource type="Texture2D" uid="uid://byf4p2mv0ex2t" path="res://assets/map pic/map1.png" id="8_1ivw1"]
+[ext_resource type="Texture2D" uid="uid://hfmgsf1drppm" path="res://assets/map pic/map2.png" id="9_i4bkf"]
+[ext_resource type="Texture2D" uid="uid://cyjn8oh3plefe" path="res://assets/map pic/map3.png" id="10_st1fe"]
+[ext_resource type="Texture2D" uid="uid://pg1qq1egsuus" path="res://assets/map pic/map4.png" id="11_2886t"]
+[ext_resource type="Texture2D" uid="uid://udowrsu6n4od" path="res://assets/map pic/map5.png" id="12_2p183"]
 
 [node name="MapEasySelect" type="Node2D"]
 script = ExtResource("1_viffs")
@@ -46,25 +48,25 @@ texture = ExtResource("7_2p183")
 
 [node name="Map1Preview" type="Sprite2D" parent="."]
 position = Vector2(85.578, 83.75)
-scale = Vector2(0.233425, 0.233425)
-texture = ExtResource("8_t82m6")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_1ivw1")
 
 [node name="Map2Preview" type="Sprite2D" parent="."]
 position = Vector2(250, 84)
-scale = Vector2(0.234807, 0.234807)
-texture = ExtResource("8_t82m6")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_i4bkf")
 
 [node name="Map3Preview" type="Sprite2D" parent="."]
 position = Vector2(413, 85)
-scale = Vector2(0.310167, 0.311581)
-texture = ExtResource("9_h3y2y")
+scale = Vector2(0.25, 0.252)
+texture = ExtResource("10_st1fe")
 
 [node name="Map4Preview" type="Sprite2D" parent="."]
 position = Vector2(169, 188)
-scale = Vector2(0.309743, 0.309743)
-texture = ExtResource("9_h3y2y")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_2886t")
 
 [node name="Map5Preview" type="Sprite2D" parent="."]
 position = Vector2(332, 189)
-scale = Vector2(0.281566, 0.281566)
-texture = ExtResource("10_awrcs")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_2p183")

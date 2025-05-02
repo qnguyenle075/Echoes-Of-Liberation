@@ -67,17 +67,17 @@ scale = Vector2(0.925, 0.925)
 texture = ExtResource("7_q4fsb")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(266, 114)
+position = Vector2(243, 114)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_n8t2a")
 
 [node name="UIAnchor" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 225.0
-offset_top = 208.0
-offset_right = 265.0
-offset_bottom = 248.0
+offset_left = 204.0
+offset_top = 204.0
+offset_right = 244.0
+offset_bottom = 244.0
 
 [node name="ExitButton" type="Button" parent="UIAnchor"]
 layout_mode = 2

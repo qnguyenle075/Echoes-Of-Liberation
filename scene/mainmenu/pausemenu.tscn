@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdjbmkb4wgejs"]
+
+[ext_resource type="Texture2D" uid="uid://jbn045b3w5lv" path="res://assets/UI/ChatGPT Image 20_15_41 2 thg 5, 2025.png" id="1_ouja7"]
+[ext_resource type="Texture2D" uid="uid://ouxy7hk2vk0c" path="res://assets/Menu/sprite_00.png" id="1_p6jhy"]
+[ext_resource type="Texture2D" uid="uid://5nqgno2rhhyk" path="res://assets/Metal Buttons Icons/sprite_015.png" id="2_dnknc"]
+[ext_resource type="Texture2D" uid="uid://dybkirkwxwwma" path="res://assets/Metal Buttons Icons/sprite_048.png" id="2_px1r7"]
+[ext_resource type="Texture2D" uid="uid://cb5varjdr2d0h" path="res://assets/Metal Buttons Icons/sprite_050.png" id="3_ge0ld"]
+[ext_resource type="Texture2D" uid="uid://bt5inma2rbksi" path="res://assets/Metal Buttons Icons/sprite_017.png" id="3_p6jhy"]
+[ext_resource type="Texture2D" uid="uid://bw3u6qx873gqp" path="res://assets/Metal Buttons Icons/sprite_009.png" id="6_ut5w1"]
+[ext_resource type="Texture2D" uid="uid://cc2fv0eu3iqs3" path="res://assets/Metal Buttons Icons/sprite_011.png" id="7_lky54"]
+
+[node name="Pausemenu" type="CanvasLayer"]
+process_mode = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.605, 0.605)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="BoxContainer"]
+scale = Vector2(3.81, 3.81)
+texture = ExtResource("1_p6jhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer"]
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("1_ouja7")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_right = 68.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="playagain" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_dnknc")
+texture_pressed = ExtResource("3_p6jhy")
+
+[node name="remuse" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+action_mode = 0
+texture_normal = ExtResource("2_px1r7")
+texture_pressed = ExtResource("3_ge0ld")
+
+[node name="quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("6_ut5w1")
+texture_pressed = ExtResource("7_lky54")
