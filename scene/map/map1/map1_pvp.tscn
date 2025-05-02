@@ -10575,7 +10575,7 @@ sources/0 = SubResource("TileSetAtlasSource_yyonm")
 sources/1 = SubResource("TileSetAtlasSource_of2fq")
 sources/2 = SubResource("TileSetAtlasSource_wymhk")
 
-[node name="map" type="Node" groups=["map1"]]
+[node name="map" type="Node2D" groups=["map1"]]
 script = ExtResource("1_vc3ot")
 
 [node name="ground" type="TileMapLayer" parent="."]

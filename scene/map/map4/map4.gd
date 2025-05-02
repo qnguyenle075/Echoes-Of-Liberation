@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @onready var pause_menu := $Pausemenu
 @onready var resume_button := $Pausemenu/VBoxContainer/remuse

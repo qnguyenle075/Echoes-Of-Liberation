@@ -6207,7 +6207,7 @@ physics_layer_0/collision_mask = 49
 sources/0 = SubResource("TileSetAtlasSource_1bept")
 sources/1 = SubResource("TileSetAtlasSource_s1by7")
 
-[node name="map4" type="Node" groups=["map4"]]
+[node name="map4" type="Node2D" groups=["map4"]]
 script = ExtResource("1_s1by7")
 
 [node name="ground" type="TileMapLayer" parent="."]

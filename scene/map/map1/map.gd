@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @onready var WallTileMap = $kothepha
 @onready var BrickTileMap = $brick
