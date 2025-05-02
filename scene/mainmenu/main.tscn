@@ -142,6 +142,7 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_5tbsy")
 
 [node name="HardButton" type="Button" parent="UIAnchor"]
+layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)

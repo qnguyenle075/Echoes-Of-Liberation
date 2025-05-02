@@ -292,7 +292,7 @@ func _on_hard_pressed():
 	is_animating = true
 	# Chuyển đến scene game AI
 	# !!! THAY ĐỔI ĐƯỜNG DẪN NÀY - SCENE CHO AI !!!
-	get_tree().change_scene_to_file("res://scene/mainmenu/MapHard.tscn") # Ví dụ
+	get_tree().change_scene_to_file("res://scene/mainmenu/MapHardSelect.tscn") # Ví dụ
 
 
 # --- CÁC HÀM LIÊN QUAN ĐẾN MAP SELECT KHÔNG CẦN NỮA ---

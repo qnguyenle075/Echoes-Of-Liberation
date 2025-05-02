@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0i0ryo1k4t0n"]
+
+[ext_resource type="Script" uid="uid://dgkip11u6xodh" path="res://scene/mainmenu/MapHardSelect.gd" id="1_s21ol"]
+[ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_xsr83"]
+[ext_resource type="Texture2D" uid="uid://b4mmlocw1ln1s" path="res://assets/Background/2.png" id="3_d64r6"]
+[ext_resource type="Texture2D" uid="uid://1cmhkwpggyyb" path="res://assets/Background/3.png" id="4_uubjd"]
+[ext_resource type="Texture2D" uid="uid://cy1ci2yqhmuiq" path="res://assets/Background/4.png" id="5_c8icr"]
+[ext_resource type="Texture2D" uid="uid://yvf73m4mytl4" path="res://assets/Background/5.png" id="6_c8n03"]
+[ext_resource type="Texture2D" uid="uid://cxpstvevynh7e" path="res://assets/Background/6.png" id="7_d3x2l"]
+[ext_resource type="Texture2D" uid="uid://b8us30o263eij" path="res://assets/map pic/map2.jpg" id="8_2cufn"]
+[ext_resource type="Texture2D" uid="uid://c2tottqiadljt" path="res://assets/map pic/map3.jpg" id="9_vato2"]
+[ext_resource type="Texture2D" uid="uid://ef68pc3r6mia" path="res://assets/map pic/map5.jpg" id="10_dtb4q"]
+
+[node name="MapHardSelect" type="Node2D"]
+script = ExtResource("1_s21ol")
+
+[node name="bg1" type="Sprite2D" parent="."]
+position = Vector2(253.2, 146.8)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("2_xsr83")
+
+[node name="bg2" type="Sprite2D" parent="."]
+position = Vector2(253.2, 146.8)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("3_d64r6")
+
+[node name="bg3" type="Sprite2D" parent="."]
+position = Vector2(253.2, 146.8)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("4_uubjd")
+
+[node name="bg4" type="Sprite2D" parent="."]
+position = Vector2(253.2, 146.8)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("5_c8icr")
+
+[node name="bg5" type="Sprite2D" parent="."]
+position = Vector2(253.2, 146.8)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("6_c8n03")
+
+[node name="bg6" type="Sprite2D" parent="."]
+position = Vector2(253.2, 146.8)
+scale = Vector2(0.925, 0.925)
+texture = ExtResource("7_d3x2l")
+
+[node name="Map1Preview" type="Sprite2D" parent="."]
+position = Vector2(85.578, 83.75)
+scale = Vector2(0.233425, 0.233425)
+texture = ExtResource("8_2cufn")
+
+[node name="Map2Preview" type="Sprite2D" parent="."]
+position = Vector2(250, 84)
+scale = Vector2(0.234807, 0.234807)
+texture = ExtResource("8_2cufn")
+
+[node name="Map3Preview" type="Sprite2D" parent="."]
+position = Vector2(413, 85)
+scale = Vector2(0.310167, 0.311581)
+texture = ExtResource("9_vato2")
+
+[node name="Map4Preview" type="Sprite2D" parent="."]
+position = Vector2(169, 188)
+scale = Vector2(0.309743, 0.309743)
+texture = ExtResource("9_vato2")
+
+[node name="Map5Preview" type="Sprite2D" parent="."]
+position = Vector2(332, 189)
+scale = Vector2(0.281566, 0.281566)
+texture = ExtResource("10_dtb4q")
