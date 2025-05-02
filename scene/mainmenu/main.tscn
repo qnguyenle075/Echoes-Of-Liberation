@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1g7hdm4cra1a"]
+[gd_scene load_steps=19 format=3 uid="uid://c1g7hdm4cra1a"]
 
 [ext_resource type="Script" uid="uid://dclt82y1xuy5v" path="res://scene/mainmenu/main.gd" id="1_v0l8b"]
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_7baaq"]
@@ -28,6 +28,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bqvl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tbsy"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="MainScene" type="Node2D"]
@@ -63,7 +66,7 @@ position = Vector2(253.2, 146.8)
 scale = Vector2(0.925, 0.925)
 texture = ExtResource("7_q4fsb")
 
-[node name="logo" type="Sprite2D" parent="."]
+[node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(266, 114)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_n8t2a")
@@ -128,6 +131,23 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_r4cjg")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_5bqvl")
+
+[node name="EasyButton" type="Button" parent="UIAnchor"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_r4cjg")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tbsy")
+
+[node name="HardButton" type="Button" parent="UIAnchor"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_r4cjg")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tbsy")
 
 [connection signal="pressed" from="UIAnchor/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIAnchor/PlayButton" to="." method="_on_play_button_pressed"]
