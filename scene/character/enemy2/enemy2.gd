@@ -263,12 +263,15 @@ func _try_find_path() -> void:
 
 	if not new_path.is_empty():
 		# ... (code xử lý path thành công) ...
+		current_path = new_path
 		print("Path found successfully!")
+		_update_target_world_position()
 		current_state = MovementState.PATHFINDING
 		print("--> State changed to PATHFINDING")
 	else:
 		print("Pathfinding failed: No path found by A*.")
 		current_path.clear()
+		target_world_position = global_position
 		current_state = MovementState.RANDOM_MOVE
 		print("--> State changed to RANDOM_MOVE (No Path Found)")
 
@@ -386,3 +389,13 @@ func on_map_changed() -> void:
 	update_astar_grid()
 	if current_state == MovementState.RANDOM_MOVE or current_state == MovementState.PATHFINDING:
 		_try_find_path()
+
+#-----------------------------------------------------------------------------
+# HÀM XỬ LÝ KHI ENEMY CHẾT (Giữ nguyên)
+#-----------------------------------------------------------------------------
+func die():
+	# ... (Giữ nguyên code die của bạn)
+	print("Enemy died!")
+	set_physics_process(false)
+	queue_free()
+	
