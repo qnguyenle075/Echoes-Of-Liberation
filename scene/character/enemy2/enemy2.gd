@@ -76,7 +76,8 @@ func _ready() -> void:
 	print("Ground Layer Used Rect: ", map_rect)
 	astar_grid.region = map_rect
 	# Offset dựa trên hệ tọa độ của ground_layer
-	astar_grid.offset = ground_layer.map_to_local(map_rect.position)
+	var center_offset = ground_layer.map_to_local(map_rect.position)
+	astar_grid.offset = center_offset - tile_size / 2.0
 	print("Calculated AStar Offset: ", astar_grid.offset) # DEBUG
 	print("AStar Region after set: ", astar_grid.region) # DEBUG Check lại region
 	# --- Cập nhật lưới A* lần đầu ---
@@ -125,58 +126,92 @@ func _physics_process(delta: float) -> void:
 	_update_animation(velocity)
 
 #-----------------------------------------------------------------------------
-# HÀM CẬP NHẬT LƯỚI A*
+# HÀM CẬP NHẬT LƯỚI A* (Sử dụng thông tin động từ ground_layer)
 #-----------------------------------------------------------------------------
 func update_astar_grid() -> void:
+	# --- Kiểm tra điều kiện cần thiết ---
 	if not ground_layer:
 		print("Update AStar Grid failed: ground_layer not found.")
 		return
-	# Không cần in cái này mỗi lần cập nhật nữa nếu nó hoạt động
+	# Đảm bảo tile_size đã được lấy từ _ready và hợp lệ
+	if tile_size == Vector2.ZERO:
+		print("Update AStar Grid failed: tile_size is zero (check _ready).")
+		return
+
+	# Bỏ comment nếu muốn thấy log mỗi lần cập nhật
 	# print("Enemy: Updating AStar Grid...")
 
-	# 1. Xóa trạng thái cũ (sẽ reset cả region, cell_size, offset)
+	# 1. Xóa các điểm solid/walkable cũ trong lưới A*
 	astar_grid.clear()
 
-	# 2. THIẾT LẬP LẠI CÁC THÔNG SỐ CỦA LƯỚI NGAY LẬP TỨC!
-	#    Lấy lại các giá trị đã tính trong _ready hoặc tính lại nếu cần.
-	#    Cách tốt nhất là dùng lại các giá trị đã tính.
-	#    Giả sử tile_size là biến thành viên hoặc có thể truy cập được.
-	#    Region và offset cũng nên được tính toán/lưu trữ một cách nhất quán.
+	# --- LẤY THÔNG TIN ĐỘNG TỪ ground_layer ---
+	# 2. Lấy vùng chữ nhật bao quanh các ô đang được sử dụng trên ground_layer
+	var current_map_rect: Rect2i = ground_layer.get_used_rect()
 
-	# Lấy lại region (ví dụ đặt thủ công như trước)
-	var map_top_left_coordinate = Vector2i(7, 5)
-	var map_width_in_tiles = 17
-	var map_height_in_tiles = 9
-	var defined_region = Rect2i(map_top_left_coordinate, Vector2i(map_width_in_tiles, map_height_in_tiles))
+	# 3. Kiểm tra xem layer có thực sự chứa tile nào không
+	if not current_map_rect.has_area():
+		print("Update AStar Grid warning: Ground layer get_used_rect() is empty! No tiles to base grid on.")
+		# Nếu không có tile, đặt region thành rỗng và dừng cập nhật grid này
+		astar_grid.region = Rect2i()
+		astar_grid.update() # Áp dụng thay đổi (region rỗng)
+		return
 
-	astar_grid.cell_size = tile_size # Đặt lại cell_size (quan trọng!)
-	astar_grid.region = defined_region # Đặt lại region
-	astar_grid.offset = ground_layer.map_to_local(map_top_left_coordinate) # Đặt lại offset
+	# --- THIẾT LẬP LẠI THÔNG SỐ A* DỰA TRÊN DỮ LIỆU ĐỘNG ---
+	# 4. Đặt lại cell_size (thường không đổi, nhưng để chắc chắn)
+	astar_grid.cell_size = tile_size
 
-	# ===> Từ đây, A* grid đã có lại đúng kích thước và vị trí <===
+	# 5. Đặt lại region dựa trên vùng map thực tế vừa lấy
+	astar_grid.region = current_map_rect
 
-	# 3. Duyệt map và đánh dấu ô solid (như cũ)
-	#    Sử dụng defined_region thay vì get_used_rect() để đảm bảo nhất quán
-	for x in range(defined_region.position.x, defined_region.end.x):
-		for y in range(defined_region.position.y, defined_region.end.y):
+	# 6. Đặt lại offset: Vị trí local (trong ground_layer) của ô map đầu tiên (góc trên trái)
+	#    Điều này đảm bảo gốc (0,0) của hệ tọa độ A* grid khớp với ô map đầu tiên.
+	astar_grid.offset = ground_layer.map_to_local(ground_layer.get_used_rect().position) - tile_size / 2.0
+	# -------------------------------------------------------
+
+	# In ra thông tin mới để debug (rất hữu ích)
+	print("AStar Updated - CellSize:", astar_grid.cell_size, "Region:", astar_grid.region, "Offset:", astar_grid.offset)
+
+# ... (Phần code trước vòng lặp) ...
+
+	# 7. Duyệt qua các ô trong region mới và đánh dấu vật cản (solid)
+	print("--- Identifying Solid Cells ---") # Thêm dòng này để biết bắt đầu kiểm tra
+	for x in range(astar_grid.region.position.x, astar_grid.region.end.x):
+		for y in range(astar_grid.region.position.y, astar_grid.region.end.y):
 			var map_coords = Vector2i(x, y)
 			var is_solid = false
+			var reason = "" # Biến lưu lý do (tùy chọn nhưng hữu ích)
 
-			# Logic kiểm tra solid (giữ nguyên)
-			if ground_layer.get_cell_source_id(map_coords) == -1:
-				is_solid = true
-			if not is_solid and brick_layer and brick_layer.get_cell_source_id(map_coords) != -1:
-				is_solid = true
-			if not is_solid and kothepha_layer and kothepha_layer.get_cell_source_id(map_coords) != -1:
-				is_solid = true
+			# --- Logic kiểm tra solid (Khuyến nghị dùng get_cell_tile_data) ---
+			var ground_data = ground_layer.get_cell_tile_data(map_coords)
+			var brick_data = null
+			var kothepha_data = null
+			if brick_layer: brick_data = brick_layer.get_cell_tile_data(map_coords)
+			if kothepha_layer: kothepha_data = kothepha_layer.get_cell_tile_data(map_coords)
 
+			if ground_data == null:
+				is_solid = true
+				reason = "No Ground" # Gán lý do
+			else:
+				if brick_data != null:
+					is_solid = true
+					reason = "Brick" # Gán lý do
+				elif kothepha_data != null:
+					is_solid = true
+					reason = "Kothepha" # Gán lý do
+				 # else: reason = "Walkable" # Ô đi được
+			# -------------------------------------------------------------
+
+			# Đặt điểm solid trong A* nếu cần VÀ IN RA TỌA ĐỘ
 			if is_solid:
-				# Không cần print solid nữa nếu đã chắc chắn
-				# print("Setting solid at: ", map_coords)
 				astar_grid.set_point_solid(map_coords, true)
+				# --- DÒNG THÊM VÀO ĐỂ IN TỌA ĐỘ SOLID ---
+				print("Setting solid at map coordinate:", map_coords, "| Reason:", reason)
+				# -----------------------------------------
+	print("--- Finished Identifying Solid Cells ---") # Thêm dòng này để biết kết thúc kiểm tra
 
-	# Không cần in AStar Grid Updated mỗi lần (trừ khi debug)
-	# print("Enemy: AStar Grid Updated.")
+	# 8. QUAN TRỌNG: Gọi update() để A* xử lý các thay đổi về region và points
+	astar_grid.update()
+	# print("Enemy: AStar Grid Updated successfully.") # Bỏ comment nếu muốn xác nhận hoàn tất
 
 #-----------------------------------------------------------------------------
 # HÀM TÌM ĐƯỜNG ĐI
@@ -198,8 +233,8 @@ func _try_find_path() -> void:
 	var end_map_pos: Vector2i = ground_layer.local_to_map(end_local_pos)
 
 	# --- DEBUG: Tọa độ Local và Map ---
-	print("Enemy Local Pos (relative to Map4): ", start_local_pos)
-	print("Player Local Pos (relative to Map4): ", end_local_pos)
+	print("Enemy Local Pos (relative to Map4): ", start_map_pos)
+	print("Player Local Pos (relative to Map4): ", end_map_pos)
 	print("Start Map Pos (Grid): ", start_map_pos, " | End Map Pos (Grid): ", end_map_pos)
 
 	var start_is_solid = astar_grid.is_point_solid(start_map_pos)
@@ -351,12 +386,3 @@ func on_map_changed() -> void:
 	update_astar_grid()
 	if current_state == MovementState.RANDOM_MOVE or current_state == MovementState.PATHFINDING:
 		_try_find_path()
-
-#-----------------------------------------------------------------------------
-# HÀM XỬ LÝ KHI ENEMY CHẾT (Giữ nguyên)
-#-----------------------------------------------------------------------------
-func die():
-	# ... (Giữ nguyên code die của bạn)
-	print("Enemy died!")
-	set_physics_process(false)
-	queue_free()
