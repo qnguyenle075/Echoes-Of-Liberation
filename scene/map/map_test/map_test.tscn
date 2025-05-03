@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cvpr8iq3fakt3" path="res://assets/Terrain/SMS_Stonelands_Tile_Set_Level_Mock_Up.png" id="1_lyki4"]
 [ext_resource type="Texture2D" uid="uid://d3d5mfdq1xlvd" path="res://assets/Terrain/Tile_45.png" id="2_iig70"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="2_sjyu0"]
-[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/enemy2/enemy2.tscn" id="3_iig70"]
+[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/tank2/tank2.tscn" id="3_iig70"]
 [ext_resource type="Texture2D" uid="uid://b0i4j02qkaltm" path="res://assets/Terrain/Terrain (16x16).png" id="3_uku0k"]
 [ext_resource type="PackedScene" uid="uid://nxvdjsqcotgj" path="res://scene/character/enemy3/enemy3.tscn" id="6_uku0k"]
 

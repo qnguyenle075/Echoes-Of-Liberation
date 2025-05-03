@@ -6,6 +6,7 @@ extends Node2D
 @onready var resume_button := $Pausemenu/VBoxContainer/remuse
 @onready var quit_button := $Pausemenu/VBoxContainer/quit
 @onready var play_again_button := $Pausemenu/VBoxContainer/playagain
+@onready var CountDown := $CanvasLayer
 
 
 const TILE_SIZE = 16
@@ -33,6 +34,8 @@ func _ready():
 	play_again_button.pressed.connect(_on_play_again_pressed)  
 	
 	Music.play_music("res://assets/Sound/Bombs Away.mp3")
+	CountDown.start_countdown(120)
+
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -87,11 +90,16 @@ func spawn_random_brick():
 			if rng.randf() < 0.65:
 				BrickTileMap.set_cell(tile_pos, 0, Vector2i(0,8))
 				
+var victory_triggered := false
+
 func _process(_delta):
-	# Kiểm tra xem còn enemy nào trong nhóm "enemies" không
+	if victory_triggered:
+		return  # Đã xử lý rồi thì bỏ qua
+
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	if enemies.size() == 0:
-		await get_tree().create_timer(3.0).timeout
+		victory_triggered = true
+		await Music.play_sfx_and_wait("res://assets/Sound/level_complete.wav")
 		get_tree().change_scene_to_file("res://scene/gameovermenu/victory.tscn")
 
 

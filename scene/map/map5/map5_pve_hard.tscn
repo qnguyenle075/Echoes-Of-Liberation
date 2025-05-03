@@ -1,15 +1,17 @@
-[gd_scene load_steps=22 format=4 uid="uid://bybjbmt8e4203"]
+[gd_scene load_steps=24 format=4 uid="uid://bybjbmt8e4203"]
 
-[ext_resource type="Script" uid="uid://cxxp33kupmqa7" path="res://scene/map/map5/map_5.gd" id="1_x4k12"]
+[ext_resource type="Script" uid="uid://cxxp33kupmqa7" path="res://scene/map/map5/map_5_pve.gd" id="1_x4k12"]
 [ext_resource type="Texture2D" uid="uid://cvpr8iq3fakt3" path="res://assets/Terrain/SMS_Stonelands_Tile_Set_Level_Mock_Up.png" id="2_i6rsi"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="3_qjh7l"]
 [ext_resource type="Texture2D" uid="uid://cfdfyqbybykk4" path="res://assets/Water/tile_0074_water1.png" id="4_fwrmi"]
 [ext_resource type="Texture2D" uid="uid://bub6r85y7jyjf" path="res://assets/Terrain/Terrain (32x32).png" id="5_8tnbb"]
 [ext_resource type="Texture2D" uid="uid://b0i4j02qkaltm" path="res://assets/Terrain/Terrain (16x16).png" id="6_8y0cp"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="7_l32or"]
-[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="7_x4k12"]
+[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/tank1/tank1.tscn" id="7_x4k12"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="9_i6rsi"]
 [ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="10_qjh7l"]
+[ext_resource type="PackedScene" uid="uid://j6q1k6atiyjn" path="res://scene/time.tscn" id="11_8tnbb"]
+[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/tank2/tank2.tscn" id="12_8y0cp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkl8c"]
 texture = ExtResource("2_i6rsi")
@@ -3606,14 +3608,28 @@ position = Vector2(376, 56)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
-[node name="Enemy5" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("7_x4k12")]
-position = Vector2(256, 72)
-wall_layer = NodePath("../kothepha")
-brick_layer = NodePath("../brick")
-
 [node name="player" parent="." groups=["players"] instance=ExtResource("7_l32or")]
-position = Vector2(136, 40)
+position = Vector2(136, 32)
 
 [node name="Pausemenu" parent="." instance=ExtResource("9_i6rsi")]
+visible = false
 
 [node name="manager" parent="." instance=ExtResource("10_qjh7l")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("11_8tnbb")]
+
+[node name="Enemy5" parent="." groups=["enemies", "players"] instance=ExtResource("12_8y0cp")]
+position = Vector2(304, 176)
+player_node_path = NodePath("../player")
+map_parent_node_path = NodePath("..")
+ground_layer_path = NodePath("../ground")
+brick_layer_path = NodePath("../brick")
+kothepha_layer_path = NodePath("../kothepha")
+
+[node name="Enemy6" parent="." groups=["enemies", "players"] instance=ExtResource("12_8y0cp")]
+position = Vector2(254, 177)
+player_node_path = NodePath("../player")
+map_parent_node_path = NodePath("..")
+ground_layer_path = NodePath("../ground")
+brick_layer_path = NodePath("../brick")
+kothepha_layer_path = NodePath("../kothepha")

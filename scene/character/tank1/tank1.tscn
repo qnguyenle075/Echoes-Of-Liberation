@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://bs8gu5htu00pk"]
 
-[ext_resource type="Script" uid="uid://qan5vrscnkkj" path="res://scene/character/Enemy/enemy.gd" id="1_uhcuf"]
+[ext_resource type="Script" uid="uid://qan5vrscnkkj" path="res://scene/character/tank1/tank1.gd" id="1_uhcuf"]
 [ext_resource type="Texture2D" uid="uid://d0855tnmu8dro" path="res://assets/Enemies/NES - Jackal Top Gunner - Heavy Tank – Đã sửa.png" id="2_mlm3j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6i3n"]
@@ -192,40 +192,41 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlm3j"]
-size = Vector2(16.75, 14.3333)
+size = Vector2(18.7198, 14.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6i3n"]
-size = Vector2(21.3333, 21.3333)
+size = Vector2(19.8276, 23.1494)
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.58, 0.58)
 collision_layer = 32
 collision_mask = 31
 script = ExtResource("1_uhcuf")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 10.0
-offset_top = 8.0
-offset_right = 15.0
-offset_bottom = 28.0
+offset_left = 6.89655
+offset_top = 6.89655
+offset_right = 11.8966
+offset_bottom = 26.8966
 rotation = 1.5708
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.44828, 0)
 sprite_frames = SubResource("SpriteFrames_kjkdt")
-animation = &"Run_Right"
+animation = &"Idle_Left"
 autoplay = "Idle__Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-0.375, 2.16667)
+position = Vector2(-2.46336, 1.72414)
 shape = SubResource("RectangleShape2D_mlm3j")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1.58946e-07)
+position = Vector2(-3.44828, 0.494254)
 shape = SubResource("RectangleShape2D_b6i3n")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

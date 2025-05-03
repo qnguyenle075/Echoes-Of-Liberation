@@ -1,16 +1,18 @@
-[gd_scene load_steps=25 format=4 uid="uid://dwsi6wumkfm7p"]
+[gd_scene load_steps=27 format=4 uid="uid://dwsi6wumkfm7p"]
 
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_0e2xo"]
-[ext_resource type="Script" uid="uid://cge1qbxa7uiqa" path="res://scene/map/map3/map_3.gd" id="1_ki62b"]
+[ext_resource type="Script" uid="uid://cge1qbxa7uiqa" path="res://scene/map/map3/map_3_pve.gd" id="1_ki62b"]
 [ext_resource type="Texture2D" uid="uid://vgydwg05u7s" path="res://assets/Terrain/Block_A_02.png" id="2_ki62b"]
 [ext_resource type="Texture2D" uid="uid://4lcnmiyjm7yw" path="res://assets/Terrain/Ground_Tile_01_A.png" id="3_ogclu"]
 [ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="4_msc7t"]
 [ext_resource type="Texture2D" uid="uid://705sijck7fat" path="res://assets/Terrain/latest.png" id="5_uujqv"]
 [ext_resource type="Texture2D" uid="uid://b0i4j02qkaltm" path="res://assets/Terrain/Terrain (16x16).png" id="6_qoe2o"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="7_s4ns4"]
-[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="8_0e2xo"]
+[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/tank1/tank1.tscn" id="8_0e2xo"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="10_ogclu"]
 [ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="11_msc7t"]
+[ext_resource type="PackedScene" uid="uid://j6q1k6atiyjn" path="res://scene/time.tscn" id="12_qoe2o"]
+[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/tank2/tank2.tscn" id="13_s4ns4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw0wx"]
 texture = ExtResource("1_0e2xo")
@@ -5400,8 +5402,11 @@ texture = ExtResource("4_msc7t")
 6:5/0 = 0
 7:5/0 = 0
 9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:5/0 = 0
+10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:5/0 = 0
+11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:5/0 = 0
 13:5/0 = 0
 14:5/0 = 0
@@ -5450,8 +5455,11 @@ texture = ExtResource("4_msc7t")
 6:8/0 = 0
 7:8/0 = 0
 9:8/0 = 0
+9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:8/0 = 0
+11:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:9/0 = 0
 1:9/0 = 0
 2:9/0 = 0
@@ -6766,17 +6774,12 @@ tile_set = SubResource("TileSet_gw0wx")
 position = Vector2(152, 64)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("8_0e2xo")]
-position = Vector2(184, 160)
-wall_layer = NodePath("../kothepha")
-brick_layer = NodePath("../brick")
-
-[node name="Enemy2" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("8_0e2xo")]
-position = Vector2(312, 128)
+position = Vector2(184, 168)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="Enemy3" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("8_0e2xo")]
-position = Vector2(312, 64)
+position = Vector2(312, 72)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
@@ -6786,10 +6789,29 @@ wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="Enemy5" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("8_0e2xo")]
-position = Vector2(312, 224)
+position = Vector2(312, 232)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../kothepha")
 
 [node name="Pausemenu" parent="." instance=ExtResource("10_ogclu")]
+visible = false
 
 [node name="manager" parent="." instance=ExtResource("11_msc7t")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("12_qoe2o")]
+
+[node name="Enemy2" parent="." groups=["enemies", "players"] instance=ExtResource("13_s4ns4")]
+position = Vector2(320, 128)
+player_node_path = NodePath("../player")
+map_parent_node_path = NodePath("..")
+ground_layer_path = NodePath("../ground")
+brick_layer_path = NodePath("../brick")
+kothepha_layer_path = NodePath("../kothepha")
+
+[node name="Enemy6" parent="." groups=["enemies", "players"] instance=ExtResource("13_s4ns4")]
+position = Vector2(192, 128)
+player_node_path = NodePath("../player")
+map_parent_node_path = NodePath("..")
+ground_layer_path = NodePath("../ground")
+brick_layer_path = NodePath("../brick")
+kothepha_layer_path = NodePath("../kothepha")

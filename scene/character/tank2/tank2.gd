@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 80.0
+const SPEED = 20.0
 # TILE_SIZE sẽ được lấy từ TileSet của ground_layer
 
 # --- Tham chiếu đến các Node cần thiết ---
@@ -311,11 +311,20 @@ func on_map_changed() -> void:
 #-----------------------------------------------------------------------------
 # HÀM XỬ LÝ KHI ENEMY CHẾT
 #-----------------------------------------------------------------------------
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("players"):
+		if body.has_method("die"):
+			body.die()
+
+var is_dead := false
+
 func die():
-	print("Enemy died!")
+	# (Giữ nguyên code die của bạn)
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
 	set_physics_process(false)
-	if path_update_timer.get_parent() == self: path_update_timer.stop()
-	if random_move_timer.get_parent() == self: random_move_timer.stop()
-	# animated_sprite.play("death")
-	# await animated_sprite.animation_finished
+	animated_sprite.play("die")
+	await get_tree().create_timer(0.5).timeout
 	queue_free()

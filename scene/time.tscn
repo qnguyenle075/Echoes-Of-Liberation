@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6q1k6atiyjn"]
+
+[ext_resource type="Script" uid="uid://c34f45iaaitcu" path="res://scene/time.gd" id="1_yegv2"]
+[ext_resource type="FontFile" uid="uid://o3ipxlxsp5be" path="res://assets/Enemies/PressStart2P.ttf" id="2_khi7m"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yegv2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 147.0
+offset_top = 22.025
+offset_right = 291.0
+offset_bottom = 30.025
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_khi7m")
+theme_override_font_sizes/font_size = 8
+text = "Time Remain: 02:00"

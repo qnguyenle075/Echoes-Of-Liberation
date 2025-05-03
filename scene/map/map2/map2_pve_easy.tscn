@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=4 uid="uid://ccq82tjyrc56m"]
+[gd_scene load_steps=30 format=4 uid="uid://ccq82tjyrc56m"]
 
-[ext_resource type="Script" uid="uid://cgeud33age2bn" path="res://scene/map/map2/map_2.gd" id="1_dwhwa"]
+[ext_resource type="Script" uid="uid://cgeud33age2bn" path="res://scene/map/map2/map_2_pve.gd" id="1_dwhwa"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="2_vxs0k"]
 [ext_resource type="Texture2D" uid="uid://cauj5i00nmho4" path="res://assets/Terrain/SNES - Super Bomberman 4 JPN - Tiles.png" id="3_ax34f"]
 [ext_resource type="Texture2D" uid="uid://c8n4hneeesgoc" path="res://assets/Terrain/SNES - Super Bomberman 4 JPN - Battle Stage 04.png" id="4_dwhwa"]
@@ -10,8 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://uyvv4rdeedxw" path="res://assets/Terrain/Tree.png" id="8_r4wut"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="9_g3cgo"]
 [ext_resource type="PackedScene" uid="uid://bdjbmkb4wgejs" path="res://scene/mainmenu/pausemenu.tscn" id="10_ax34f"]
-[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/Enemy/Enemy.tscn" id="10_vxs0k"]
+[ext_resource type="PackedScene" uid="uid://bs8gu5htu00pk" path="res://scene/character/tank1/tank1.tscn" id="10_vxs0k"]
 [ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="11_ax34f"]
+[ext_resource type="PackedScene" uid="uid://j6q1k6atiyjn" path="res://scene/time.tscn" id="13_fpy1s"]
+[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/tank2/tank2.tscn" id="14_tkitq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvlpw"]
 texture = ExtResource("2_vxs0k")
@@ -7454,5 +7456,16 @@ wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="Pausemenu" parent="." instance=ExtResource("10_ax34f")]
+visible = false
 
 [node name="manager" parent="." instance=ExtResource("11_ax34f")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("13_fpy1s")]
+
+[node name="Enemy4" parent="." groups=["enemies", "players"] instance=ExtResource("14_tkitq")]
+position = Vector2(256, 128)
+player_node_path = NodePath("../player")
+map_parent_node_path = NodePath("..")
+ground_layer_path = NodePath("../ground")
+brick_layer_path = NodePath("../brick")
+kothepha_layer_path = NodePath("../cover")
