@@ -68,16 +68,16 @@ scale = Vector2(0.925, 0.925)
 texture = ExtResource("7_q4fsb")
 
 [node name="Logo" type="Sprite2D" parent="."]
-position = Vector2(243, 114)
+position = Vector2(262, 114)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_n8t2a")
 
 [node name="UIAnchor" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 204.0
+offset_left = 221.0
 offset_top = 204.0
-offset_right = 244.0
+offset_right = 276.0
 offset_bottom = 244.0
 
 [node name="ExitButton" type="Button" parent="UIAnchor"]
@@ -118,6 +118,7 @@ texture = ExtResource("11_q4fsb")
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+localize_numeral_system = false
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_r4cjg")
 theme_override_font_sizes/font_size = 36
