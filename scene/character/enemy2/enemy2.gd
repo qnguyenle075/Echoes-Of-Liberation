@@ -77,7 +77,7 @@ func _ready() -> void:
 	astar_grid.region = map_rect
 	# Offset dựa trên hệ tọa độ của ground_layer
 	var center_offset = ground_layer.map_to_local(map_rect.position)
-	astar_grid.offset = center_offset - tile_size / 2.0
+	astar_grid.offset = ground_layer.map_to_local(map_rect.position)
 	print("Calculated AStar Offset: ", astar_grid.offset) # DEBUG
 	print("AStar Region after set: ", astar_grid.region) # DEBUG Check lại region
 	# --- Cập nhật lưới A* lần đầu ---
@@ -165,7 +165,7 @@ func update_astar_grid() -> void:
 
 	# 6. Đặt lại offset: Vị trí local (trong ground_layer) của ô map đầu tiên (góc trên trái)
 	#    Điều này đảm bảo gốc (0,0) của hệ tọa độ A* grid khớp với ô map đầu tiên.
-	astar_grid.offset = ground_layer.map_to_local(ground_layer.get_used_rect().position) - tile_size / 2.0
+	astar_grid.offset = ground_layer.map_to_local(ground_layer.get_used_rect().position)
 	# -------------------------------------------------------
 
 	# In ra thông tin mới để debug (rất hữu ích)
