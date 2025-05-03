@@ -157,4 +157,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_5tbsy")
 [connection signal="pressed" from="UIAnchor/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIAnchor/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UIAnchor/VsPlayerButton" to="." method="_on_vs_player_button_pressed"]
+[connection signal="pressed" from="UIAnchor/VsPlayerButton" to="." method="_on_vs_player_pressed"]
 [connection signal="pressed" from="UIAnchor/VsAIButton" to="." method="_on_vs_ai_button_pressed"]
+[connection signal="pressed" from="UIAnchor/VsAIButton" to="." method="_on_vs_ai_pressed"]
