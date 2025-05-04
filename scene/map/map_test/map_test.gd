@@ -21,7 +21,7 @@ func _ready() -> void:
 	HEIGHT = used_rect.size.y
 
 	setup_safe_spots()
-	spawn_random_brick()
+	# spawn_random_brick()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

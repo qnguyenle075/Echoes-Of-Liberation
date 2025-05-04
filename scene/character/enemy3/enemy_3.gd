@@ -90,11 +90,12 @@ func _ready() -> void:
 			# Dùng get_cell_source_id vì nó nhanh hơn get_cell_tile_data nếu chỉ cần biết có tile hay không
 			if not is_solid and is_instance_valid(brick_layer) and brick_layer.get_cell_source_id(tile_position) != -1:
 				is_solid = true
+				print("Tile ", tile_position, " solid due to brick.")
 
 			# 3. Kiểm tra Kothepha Layer (chỉ cần kiểm tra nếu chưa bị đánh dấu solid)
 			if not is_solid and is_instance_valid(kothepha_layer) and kothepha_layer.get_cell_source_id(tile_position) != -1:
 				is_solid = true
-				# print("Tile ", tile_position, " solid due to kothepha.") # Debugging
+				print("Tile ", tile_position, " solid due to kothepha.") # Debugging
 
 			if is_solid:
 				astar_grid.set_point_solid(tile_position)

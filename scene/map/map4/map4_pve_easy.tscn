@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://6g75vyd8d8ea"]
 
-[ext_resource type="Script" uid="uid://b1jwm4m3url72" path="res://scene/map/map4/map4_pve.gd" id="1_2qqr6"]
+[ext_resource type="Script" path="res://scene/map/map4/map4_pve.gd" id="1_2qqr6"]
 [ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="1_s3hn7"]
 [ext_resource type="Texture2D" uid="uid://e8y6ohhehlu7" path="res://assets/Terrain/Objects.png" id="2_vdo0i"]
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="3_rgbiy"]
