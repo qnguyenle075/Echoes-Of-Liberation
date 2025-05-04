@@ -311,8 +311,8 @@ radius = 4.44444
 height = 13.3333
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhcuf"]
-radius = 4.44444
-height = 12.0
+radius = 6.66667
+height = 13.3333
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
@@ -322,26 +322,29 @@ collision_mask = 31
 script = ExtResource("1_r7pir")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 5.0
-offset_top = 8.0
-offset_right = 10.0
-offset_bottom = 18.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 11.0
+offset_bottom = 14.0
 rotation = 1.5708
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.11111, -3.33333)
 sprite_frames = SubResource("SpriteFrames_kjkdt")
 animation = &"die"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.42109e-14, 4.44444)
+visible = false
+position = Vector2(0, 3.33333)
 shape = SubResource("CapsuleShape2D_r7pir")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 5.55556)
+visible = false
+position = Vector2(0, 3.33333)
 shape = SubResource("CapsuleShape2D_uhcuf")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
