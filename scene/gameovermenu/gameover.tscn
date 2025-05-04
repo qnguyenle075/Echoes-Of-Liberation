@@ -61,10 +61,10 @@ texture = ExtResource("7_poae7")
 [node name="UIAnchor" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 208.0
-offset_top = 208.0
-offset_right = 248.0
-offset_bottom = 248.0
+offset_left = 221.0
+offset_top = 204.0
+offset_right = 261.0
+offset_bottom = 244.0
 
 [node name="ExitButton" type="Button" parent="UIAnchor"]
 layout_mode = 2
@@ -102,7 +102,7 @@ texture = ExtResource("11_tyiji")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(248, 104)
+position = Vector2(260, 104)
 scale = Vector2(0.474399, 0.429811)
 texture = ExtResource("11_0j2cy")
 
