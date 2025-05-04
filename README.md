@@ -46,7 +46,7 @@ To host your own version:
 ---
 
 ## 💡 Credits
-- Developed by: **[Your Name]**
+- Developed by: Nguyen Le Quang, Ly Quoc Thanh, Nguyen Tan Van, Pham Quang Thinh, Huynh Van Sinh
 - Engine: [Godot Engine](https://godotengine.org/)
 - Sounds: [Kenney.nl](https://kenney.nl/assets), [freesound.org](https://freesound.org)
 - Hosting: [Netlify](https://netlify.com)
