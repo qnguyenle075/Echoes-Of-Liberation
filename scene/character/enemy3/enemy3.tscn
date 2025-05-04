@@ -306,8 +306,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7pir"]
-size = Vector2(6.66667, 8.88888)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r7pir"]
+radius = 4.44444
+height = 13.3333
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhcuf"]
 radius = 4.44444
@@ -333,14 +334,13 @@ animation = &"die"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.32455e-07, 5.55555)
-shape = SubResource("RectangleShape2D_r7pir")
+position = Vector2(1.42109e-14, 4.44444)
+shape = SubResource("CapsuleShape2D_r7pir")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(0, 5.55556)
 shape = SubResource("CapsuleShape2D_uhcuf")
 

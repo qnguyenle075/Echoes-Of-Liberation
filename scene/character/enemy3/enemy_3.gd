@@ -160,5 +160,22 @@ func update_animation(direction: Vector2) -> void:
 				animated_sprite.animation = "run_north"
 				last_direction = "north"
 	animated_sprite.play()
+	
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("players"):
+		if body.has_method("die"):
+			body.die()
 
+var is_dead := false
+
+func die():
+	# (Giữ nguyên code die của bạn)
+	if is_dead:
+		return
+	is_dead = true
+	velocity = Vector2.ZERO
+	set_physics_process(false)
+	animated_sprite.play("die")
+	await get_tree().create_timer(0.5).timeout
+	queue_free()
 	
