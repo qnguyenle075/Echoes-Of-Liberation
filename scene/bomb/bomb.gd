@@ -25,6 +25,8 @@ func _on_timeout():
 	explode()
 
 func explode():
+	for enemy in get_tree().get_nodes_in_group("astar"):
+		enemy.needs_update = true
 	Music.play_sfx("res://assets/Sound/explosion-312361.mp3")
 	spawn_explosions()
 	emit_signal("bomb_exploded")

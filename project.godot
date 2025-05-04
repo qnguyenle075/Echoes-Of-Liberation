@@ -34,6 +34,11 @@ map5=""
 map3=""
 players=""
 enemies=""
+astar=""
+brick_layer=""
+ground_layer=""
+kothepha_layer=""
+map_test=""
 
 [input]
 

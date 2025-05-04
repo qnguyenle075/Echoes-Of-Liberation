@@ -44,65 +44,28 @@ var last_direction: String = "south"
 # HÀM KHỞI TẠO VÀ THIẾT LẬP
 #-----------------------------------------------------------------------------
 func _ready() -> void:
-	# --- Đảm bảo các layer đã sẵn sàng ---
-	# Thêm kiểm tra null để tránh lỗi nếu NodePath sai
+	# Kiểm tra các layer
 	if not is_instance_valid(ground_layer):
 		printerr("Ground layer node not found or invalid!")
 		return
 	if not is_instance_valid(brick_layer):
 		printerr("Brick layer node not found or invalid!")
-		# Có thể return hoặc chỉ cảnh báo tùy theo logic game
 	if not is_instance_valid(kothepha_layer):
 		printerr("Kothepha layer node not found or invalid!")
-		# Có thể return hoặc chỉ cảnh báo
 
-	# --- Thiết lập AStarGrid2D ---
+	# Thiết lập AStarGrid lần đầu
 	astar_grid = AStarGrid2D.new()
-	# Lấy vùng sử dụng chung từ ground layer (hoặc map_parent nếu cần)
-	astar_grid.region = ground_layer.get_used_rect()
-	astar_grid.cell_size = ground_layer.tile_set.tile_size
-	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
-	# Gọi update() trước để khởi tạo các điểm, mặc định là walkable
-	astar_grid.update()
+	rebuild_astar_grid()
 
-	var region_size = astar_grid.region.size
-	var region_position = astar_grid.region.position
+	print("Enemy ready.")
 
-	print("Scanning region:", astar_grid.region) # Debugging
 
-	for x in region_size.x:
-		for y in region_size.y:
-			var tile_position = Vector2i(
-				x + region_position.x,
-				y + region_position.y
-			)
-
-			var is_solid = false # Giả sử ô có thể đi qua ban đầu
-
-			# --- Kiểm tra các điều kiện làm cho ô solid ---
-
-			# 1. Kiểm tra Ground Layer
-			var ground_tile_data = ground_layer.get_cell_tile_data(tile_position)
-			if ground_tile_data == null or not ground_tile_data.get_custom_data("walkable"):
-				is_solid = true
-
-			# 2. Kiểm tra Brick Layer (chỉ cần kiểm tra nếu chưa bị đánh dấu solid)
-			# Dùng get_cell_source_id vì nó nhanh hơn get_cell_tile_data nếu chỉ cần biết có tile hay không
-			if not is_solid and is_instance_valid(brick_layer) and brick_layer.get_cell_source_id(tile_position) != -1:
-				is_solid = true
-				print("Tile ", tile_position, " solid due to brick.")
-
-			# 3. Kiểm tra Kothepha Layer (chỉ cần kiểm tra nếu chưa bị đánh dấu solid)
-			if not is_solid and is_instance_valid(kothepha_layer) and kothepha_layer.get_cell_source_id(tile_position) != -1:
-				is_solid = true
-				print("Tile ", tile_position, " solid due to kothepha.") # Debugging
-
-			if is_solid:
-				astar_grid.set_point_solid(tile_position)
-
-	print("AStarGrid setup complete.") 
 	
 func _process(_delta):
+	if needs_update:
+		rebuild_astar_grid()
+		needs_update = false
+		
 	if not is_moving:
 		move()
 	
@@ -180,3 +143,38 @@ func die():
 	await get_tree().create_timer(0.5).timeout
 	queue_free()
 	
+var needs_update := false
+
+func rebuild_astar_grid():
+	if not is_instance_valid(ground_layer):
+		return
+
+	astar_grid.clear()
+	astar_grid.region = ground_layer.get_used_rect()
+	astar_grid.cell_size = ground_layer.tile_set.tile_size
+	astar_grid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
+	astar_grid.update()
+
+	var region_size = astar_grid.region.size
+	var region_position = astar_grid.region.position
+
+	for x in region_size.x:
+		for y in region_size.y:
+			var tile_position = Vector2i(x + region_position.x, y + region_position.y)
+
+			var is_solid = false
+
+			var ground_tile_data = ground_layer.get_cell_tile_data(tile_position)
+			if ground_tile_data == null or not ground_tile_data.get_custom_data("walkable"):
+				is_solid = true
+
+			if not is_solid and is_instance_valid(brick_layer) and brick_layer.get_cell_source_id(tile_position) != -1:
+				is_solid = true
+
+			if not is_solid and is_instance_valid(kothepha_layer) and kothepha_layer.get_cell_source_id(tile_position) != -1:
+				is_solid = true
+
+			if is_solid:
+				astar_grid.set_point_solid(tile_position)
+
+	print("AStarGrid rebuilt.")

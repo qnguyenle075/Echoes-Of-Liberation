@@ -26,7 +26,7 @@ func _ready():
 	HEIGHT = used_rect.size.y
 
 	setup_safe_spots()
-	spawn_random_brick()
+	#spawn_random_brick()
 	
 	pause_menu.visible = false
 	resume_button.pressed.connect(_on_resume_pressed)

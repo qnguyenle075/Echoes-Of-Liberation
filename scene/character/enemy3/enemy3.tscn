@@ -311,7 +311,7 @@ radius = 4.44444
 height = 13.3333
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhcuf"]
-radius = 6.66667
+radius = 6.66665
 height = 13.3333
 
 [node name="Enemy" type="CharacterBody2D"]
@@ -335,18 +335,14 @@ animation = &"die"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 3.33333)
+position = Vector2(1.11111, 1.11111)
 shape = SubResource("CapsuleShape2D_r7pir")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2(0, 3.33333)
+position = Vector2(1.11111, 1.11111)
 shape = SubResource("CapsuleShape2D_uhcuf")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
