@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c87hy77g3qtig"]
+[gd_scene load_steps=15 format=3 uid="uid://c87hy77g3qtig"]
 
 [ext_resource type="Script" uid="uid://dot0l6g7pm8sm" path="res://scene/mainmenu/Map2p.gd" id="1_d6yy8"]
 [ext_resource type="Texture2D" uid="uid://bdskpru1v1x8j" path="res://assets/Background/1.png" id="2_kt4v5"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://pg1qq1egsuus" path="res://assets/map pic/map4.png" id="11_7tpr2"]
 [ext_resource type="Texture2D" uid="uid://udowrsu6n4od" path="res://assets/map pic/map5.png" id="12_hui5k"]
 [ext_resource type="PackedScene" uid="uid://bq6pi2tqhqvcl" path="res://scene/music/musicmanager.tscn" id="13_lthu7"]
+[ext_resource type="PackedScene" uid="uid://cy1eoki0yf8c7" path="res://scene/howtoplaypvp.tscn" id="14_7tpr2"]
 
 [node name="Map2p" type="Node2D"]
 script = ExtResource("1_d6yy8")
@@ -73,3 +74,5 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_hui5k")
 
 [node name="manager" parent="." instance=ExtResource("13_lthu7")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("14_7tpr2")]

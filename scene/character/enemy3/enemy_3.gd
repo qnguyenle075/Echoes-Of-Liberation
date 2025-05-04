@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50.0
+const SPEED = 15.0
 # TILE_SIZE sẽ được lấy từ TileSet của ground_layer
 
 # --- Tham chiếu đến các Node cần thiết ---
@@ -62,6 +62,13 @@ func _ready() -> void:
 
 	
 func _process(_delta):
+	if player == null:
+		printerr("⚠ Player is null.")
+	if ground_layer.get_used_rect().size == Vector2i(0, 0):
+		printerr("⚠ ground_layer has no tiles!")
+	if not is_instance_valid(ground_layer):
+		printerr("❌ ground_layer is invalid.")
+
 	if needs_update:
 		rebuild_astar_grid()
 		needs_update = false
@@ -72,9 +79,11 @@ func _process(_delta):
 func move():
 	var start = ground_layer.local_to_map(global_position)
 	var end = ground_layer.local_to_map(player.global_position)
-
+	print("Start:", start, "End:", end)
+	print("Is start in region?: ", astar_grid.region.has_point(start))
+	print("Is end in region?: ", astar_grid.region.has_point(end))
 	var path = astar_grid.get_id_path(start, end)
-
+	print("Path: ", path)
 	# Bỏ điểm đầu vì là vị trí hiện tại
 	if path.size() > 1:
 		path.pop_front()
@@ -178,3 +187,5 @@ func rebuild_astar_grid():
 				astar_grid.set_point_solid(tile_position)
 
 	print("AStarGrid rebuilt.")
+	print("Ground used rect: ", ground_layer.get_used_rect())
+	print("AStar region: ", astar_grid.region)

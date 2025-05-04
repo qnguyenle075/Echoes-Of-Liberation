@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://bdyqj43246giv"]
 
-[ext_resource type="Script" path="res://scene/map/map5/map_5_pve.gd" id="1_p6c0q"]
+[ext_resource type="Script" uid="uid://cxxp33kupmqa7" path="res://scene/map/map5/map_5_pve.gd" id="1_p6c0q"]
 [ext_resource type="Texture2D" uid="uid://cvpr8iq3fakt3" path="res://assets/Terrain/SMS_Stonelands_Tile_Set_Level_Mock_Up.png" id="2_ehrlu"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="3_dj5yu"]
 [ext_resource type="Texture2D" uid="uid://cfdfyqbybykk4" path="res://assets/Water/tile_0074_water1.png" id="4_xvpvm"]
@@ -3578,6 +3578,7 @@ tile_map_data = PackedByteArray("AAABAAEAAAANAA8AAAACAAEAAAANAA8AAAACAAIAAAANAA8
 tile_set = SubResource("TileSet_r7aci")
 
 [node name="brick" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAANAAIAAAAWAAAAAAANAAMAAAAWAAAAAAANAAQAAAAWAAAAAAAMAAQAAAAWAAAAAAALAAQAAAAWAAAAAAAKAAQAAAAWAAAAAAAJAAQAAAAWAAAAAAAIAAQAAAAWAAAAAAAKAAIAAAAWAAAAAAALAAIAAAAWAAAAAAAMAAIAAAAWAAAAAAAXAAQAAAAWAAAAAAAWAAQAAAAWAAAAAAAVAAQAAAAWAAAAAAAVAAIAAAAWAAAAAAAUAAIAAAAWAAAAAAATAAIAAAAWAAAAAAASAAIAAAAWAAAAAAASAAMAAAAWAAAAAAASAAQAAAAWAAAAAAATAAQAAAAWAAAAAAAUAAQAAAAWAAAAAAAOAAQAAAAWAAAAAAAPAAQAAAAWAAAAAAAQAAQAAAAWAAAAAAARAAQAAAAWAAAAAAANAA0AAAAWAAAAAAAOAA0AAAAWAAAAAAAPAA0AAAAWAAAAAAAQAA0AAAAWAAAAAAARAA0AAAAWAAAAAAASAA0AAAAWAAAAAAAIAA0AAAAWAAAAAAAJAA0AAAAWAAAAAAAKAA0AAAAWAAAAAAALAA0AAAAWAAAAAAAMAA0AAAAWAAAAAAANAA4AAAAWAAAAAAANAA8AAAAWAAAAAAASAA4AAAAWAAAAAAASAA8AAAAWAAAAAAATAA0AAAAWAAAAAAAUAA0AAAAWAAAAAAAVAA0AAAAWAAAAAAAWAA0AAAAWAAAAAAAXAA0AAAAWAAAAAAAKAA8AAAAWAAAAAAALAA8AAAAWAAAAAAAMAA8AAAAWAAAAAAATAA8AAAAWAAAAAAAUAA8AAAAWAAAAAAAVAA8AAAAWAAAAAAANAAUAAAAWAAAAAAAMAAcAAAAWAAAAAAANAAgAAAAWAAAAAAANAAkAAAAWAAAAAAAMAAoAAAAWAAAAAAANAAwAAAAWAAAAAAASAAwAAAAWAAAAAAATAAcAAAAWAAAAAAASAAgAAAAWAAAAAAASAAkAAAAWAAAAAAATAAoAAAAWAAAAAAASAAUAAAAWAAAAAAAUAAcAAAAWAAAAAAAVAAcAAAAWAAAAAAAUAAoAAAAWAAAAAAAVAAoAAAAWAAAAAAAKAAcAAAAWAAAAAAALAAcAAAAWAAAAAAAKAAoAAAAWAAAAAAALAAoAAAAWAAAAAAA=")
 tile_set = SubResource("TileSet_lkl8c")
 
 [node name="cover" type="TileMapLayer" parent="."]
@@ -3594,7 +3595,7 @@ wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="Enemy2" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("7_p6c0q")]
-position = Vector2(184, 136)
+position = Vector2(144, 240)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
@@ -3609,8 +3610,6 @@ position = Vector2(136, 40)
 [node name="Pausemenu" parent="." instance=ExtResource("9_ehrlu")]
 visible = false
 
-[node name="manager" parent="." instance=ExtResource("10_dj5yu")]
-
 [node name="CanvasLayer" parent="." instance=ExtResource("11_3sgcj")]
 
 [node name="Enemy4" parent="." groups=["enemies", "players"] instance=ExtResource("12_yyy5v")]
@@ -3620,3 +3619,5 @@ map_parent_node_path = NodePath("..")
 ground_layer_path = NodePath("../ground")
 brick_layer_path = NodePath("../brick")
 kothepha_layer_path = NodePath("../kothepha")
+
+[node name="manager" parent="." instance=ExtResource("10_dj5yu")]

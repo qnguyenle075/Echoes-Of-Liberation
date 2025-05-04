@@ -2218,7 +2218,7 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_1145t")
 sources/1 = SubResource("TileSetAtlasSource_brjgs")
 
-[node name="MapTest" type="Node2D" groups=["map_test"]]
+[node name="MapTest" type="Node2D"]
 script = ExtResource("1_uku0k")
 
 [node name="ground" type="TileMapLayer" parent="."]

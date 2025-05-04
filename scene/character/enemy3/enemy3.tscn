@@ -311,14 +311,14 @@ radius = 4.44444
 height = 13.3333
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uhcuf"]
-radius = 6.66665
-height = 13.3333
+radius = 7.77778
+height = 15.5556
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
 scale = Vector2(0.9, 0.9)
 collision_layer = 32
-collision_mask = 31
+collision_mask = 29
 script = ExtResource("1_r7pir")
 
 [node name="Panel" type="Panel" parent="."]
@@ -335,6 +335,7 @@ animation = &"die"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1.11111, 1.11111)
 shape = SubResource("CapsuleShape2D_r7pir")
 

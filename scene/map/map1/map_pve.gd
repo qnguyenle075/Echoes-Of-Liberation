@@ -34,7 +34,7 @@ func _ready():
 	play_again_button.pressed.connect(_on_play_again_pressed)  
 	
 	Music.play_music("res://assets/Sound/Bombs Away.mp3")
-	CountDown.start_countdown(120)
+	CountDown.start_countdown(150)
 
 
 func _input(event):

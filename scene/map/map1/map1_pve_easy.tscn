@@ -10586,6 +10586,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAEAAEAAAAAAAEAAQAEAAEAAAAAAAIAAQAEAAE
 tile_set = SubResource("TileSet_4wnb2")
 
 [node name="brick" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAALAAQAAAAAAAgAAAALAAUAAAAAAAgAAAALAAYAAAAAAAgAAAAKAAYAAAAAAAgAAAAJAAYAAAAAAAgAAAATAAQAAAAAAAgAAAATAAUAAAAAAAgAAAATAAYAAAAAAAgAAAAUAAYAAAAAAAgAAAAVAAYAAAAAAAgAAAAJAAwAAAAAAAgAAAAKAAwAAAAAAAgAAAALAAwAAAAAAAgAAAALAA0AAAAAAAgAAAALAA4AAAAAAAgAAAAVAAwAAAAAAAgAAAAUAAwAAAAAAAgAAAATAAwAAAAAAAgAAAATAA0AAAAAAAgAAAATAA4AAAAAAAgAAAANAAcAAAAAAAgAAAANAAgAAAAAAAgAAAANAAkAAAAAAAgAAAANAAoAAAAAAAgAAAANAAsAAAAAAAgAAAANAAwAAAAAAAgAAAAKAAoAAAAAAAgAAAALAAoAAAAAAAgAAAAMAAoAAAAAAAgAAAAKAAgAAAAAAAgAAAALAAgAAAAAAAgAAAAMAAgAAAAAAAgAAAAOAAgAAAAAAAgAAAAOAAoAAAAAAAgAAAANAAYAAAAAAAgAAAARAAYAAAAAAAgAAAARAAcAAAAAAAgAAAARAAgAAAAAAAgAAAARAAkAAAAAAAgAAAARAAoAAAAAAAgAAAARAAsAAAAAAAgAAAARAAwAAAAAAAgAAAAQAAgAAAAAAAgAAAASAAgAAAAAAAgAAAATAAgAAAAAAAgAAAAUAAgAAAAAAAgAAAAQAAoAAAAAAAgAAAASAAoAAAAAAAgAAAATAAoAAAAAAAgAAAAUAAoAAAAAAAgAAAAPAAQAAAAAAAgAAAAPAAUAAAAAAAgAAAAOAAQAAAAAAAgAAAAQAAQAAAAAAAgAAAAPAAYAAAAAAAgAAAAPAAwAAAAAAAgAAAAPAA0AAAAAAAgAAAAPAA4AAAAAAAgAAAAQAA4AAAAAAAgAAAAOAA4AAAAAAAgAAAALAAkAAAAAAAgAAAATAAkAAAAAAAgAAAA=")
 tile_set = SubResource("TileSet_3tgtn")
 
 [node name="cover" type="TileMapLayer" parent="."]
@@ -10600,22 +10601,22 @@ tile_set = SubResource("TileSet_ihkbp")
 position = Vector2(152, 65)
 
 [node name="tank1_1" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("6_d7mms")]
-position = Vector2(187, 200)
+position = Vector2(203, 199)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="tank1_2" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("6_d7mms")]
-position = Vector2(219, 136)
+position = Vector2(154, 152)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="tank1_3" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("6_d7mms")]
-position = Vector2(329, 104)
+position = Vector2(346, 88)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
 [node name="tank2_1" parent="." groups=["enemies", "players"] instance=ExtResource("9_evu1t")]
-position = Vector2(288, 161)
+position = Vector2(255, 146)
 player_node_path = NodePath("../player")
 map_parent_node_path = NodePath("..")
 ground_layer_path = NodePath("../ground")

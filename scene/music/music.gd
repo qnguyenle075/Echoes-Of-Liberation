@@ -11,10 +11,10 @@ var sfx_muted := false
 func _ready():
 	add_child(sfx_player)
 	add_child(music_player)
-	music_player.volume_db = -40
-	sfx_player.volume_db = -30
+	music_player.volume_db = -20
+	sfx_player.volume_db = -20
 	add_child(transition_sfx_player)
-	transition_sfx_player.volume_db = -30
+	transition_sfx_player.volume_db = -10
 
 
 func play_music(path: String):

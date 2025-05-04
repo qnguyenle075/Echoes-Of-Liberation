@@ -25,7 +25,7 @@ func _ready():
 	HEIGHT = used_rect.size.y
 
 	setup_safe_spots()
-	spawn_random_brick()
+	#spawn_random_brick()
 	
 	pause_menu.visible = false
 	resume_button.pressed.connect(_on_resume_pressed)
@@ -33,7 +33,7 @@ func _ready():
 	play_again_button.pressed.connect(_on_play_again_pressed)  
 	
 	Music.play_music("res://assets/Sound/Pixel Blast.mp3")
-	CountDown.start_countdown(120)
+	CountDown.start_countdown(150)
 	
 func setup_safe_spots():
 	safe_spots.clear()

@@ -6236,7 +6236,7 @@ wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../kothepha")
 
 [node name="Enemy2" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("4_2qqr6")]
-position = Vector2(216, 168)
+position = Vector2(248, 160)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
@@ -6253,7 +6253,7 @@ visible = false
 [node name="CanvasLayer" parent="." instance=ExtResource("8_45sjw")]
 
 [node name="Enemy4" parent="." groups=["enemies", "players"] instance=ExtResource("9_vmrgj")]
-position = Vector2(256, 160)
+position = Vector2(352, 224)
 player_node_path = NodePath("../player")
 map_parent_node_path = NodePath("..")
 ground_layer_path = NodePath("../ground")
