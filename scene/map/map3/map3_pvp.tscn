@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=4 uid="uid://d3jcyqsnt2bd1"]
 
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_7yte2"]
-[ext_resource type="Script" uid="uid://cj1p67rd0b5tl" path="res://scene/map/map3/map_3_pvp.gd" id="1_o3o1b"]
+[ext_resource type="Script" path="res://scene/map/map3/map_3_pvp.gd" id="1_o3o1b"]
 [ext_resource type="Texture2D" uid="uid://vgydwg05u7s" path="res://assets/Terrain/Block_A_02.png" id="2_gx5jx"]
 [ext_resource type="Texture2D" uid="uid://4lcnmiyjm7yw" path="res://assets/Terrain/Ground_Tile_01_A.png" id="3_b0tuo"]
 [ext_resource type="Texture2D" uid="uid://604j72uy3h6h" path="res://assets/Terrain/TurboGrafx-16 - Bomberman 93 - Tilesets.png" id="4_o3o1b"]

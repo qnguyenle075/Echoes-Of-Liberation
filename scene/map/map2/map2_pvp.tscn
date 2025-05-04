@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://byupui4hphg6g"]
 
-[ext_resource type="Script" uid="uid://dypp3bu3eofwm" path="res://scene/map/map2/map_2_pvp.gd" id="1_2ut05"]
+[ext_resource type="Script" path="res://scene/map/map2/map_2_pvp.gd" id="1_2ut05"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="1_hm1eg"]
 [ext_resource type="Texture2D" uid="uid://cauj5i00nmho4" path="res://assets/Terrain/SNES - Super Bomberman 4 JPN - Tiles.png" id="3_br746"]
 [ext_resource type="Texture2D" uid="uid://c8n4hneeesgoc" path="res://assets/Terrain/SNES - Super Bomberman 4 JPN - Battle Stage 04.png" id="4_38fwu"]
