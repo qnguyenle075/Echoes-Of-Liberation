@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 15.0
+const SPEED = 30.0
 # TILE_SIZE sẽ được lấy từ TileSet của ground_layer
 
 # --- Tham chiếu đến các Node cần thiết ---

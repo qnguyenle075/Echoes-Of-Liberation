@@ -82,7 +82,7 @@ frame_progress = 0.902441
 shape = SubResource("CircleShape2D_coick")
 
 [node name="thoigianno" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
