@@ -33,7 +33,7 @@ func _ready():
 	play_again_button.pressed.connect(_on_play_again_pressed)  
 	
 	Music.play_music("res://assets/Sound/Victory Reunited.mp3")
-	CountDown.start_countdown(150)
+	CountDown.start_countdown(180)
 
 func setup_safe_spots():
 	safe_spots.clear()

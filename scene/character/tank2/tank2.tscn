@@ -112,7 +112,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"die",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -215,7 +215,7 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.69492, 0)
 sprite_frames = SubResource("SpriteFrames_kjkdt")
-animation = &"idle_west"
+animation = &"die"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

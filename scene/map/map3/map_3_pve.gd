@@ -13,7 +13,7 @@ func _ready():
 	play_again_button.pressed.connect(_on_play_again_pressed)  
 	
 	Music.play_music("res://assets/Sound/Pixel Explosion.mp3")
-	CountDown.start_countdown(150)
+	CountDown.start_countdown(180)
 
 var victory_triggered := false
 

@@ -14,7 +14,7 @@ func _ready():
 	play_again_button.pressed.connect(_on_play_again_pressed)  
 	
 	Music.play_music("res://assets/Sound/Pixel Frenzy.mp3")
-	CountDown.start_countdown(150)
+	CountDown.start_countdown(180)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var victory_triggered := false
