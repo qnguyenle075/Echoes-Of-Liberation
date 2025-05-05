@@ -6805,7 +6805,7 @@ visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("12_qoe2o")]
 
-[node name="Enemy2" parent="." groups=["enemies", "players"] instance=ExtResource("13_s4ns4")]
+[node name="Enemy2" parent="." groups=["astar", "enemies", "players"] instance=ExtResource("13_s4ns4")]
 position = Vector2(328, 136)
 player_node_path = NodePath("../player")
 map_parent_node_path = NodePath("..")
@@ -6813,7 +6813,7 @@ ground_layer_path = NodePath("../ground")
 brick_layer_path = NodePath("../brick")
 kothepha_layer_path = NodePath("../kothepha")
 
-[node name="Enemy6" parent="." groups=["enemies", "players"] instance=ExtResource("13_s4ns4")]
+[node name="Enemy6" parent="." groups=["astar", "enemies", "players"] instance=ExtResource("13_s4ns4")]
 position = Vector2(200, 168)
 player_node_path = NodePath("../player")
 map_parent_node_path = NodePath("..")
