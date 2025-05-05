@@ -284,12 +284,18 @@ texture = ExtResource("1_s3hn7")
 9:21/0 = 0
 10:21/0 = 0
 12:21/0 = 0
+12:21/0/custom_data_0 = true
 13:21/0 = 0
+13:21/0/custom_data_0 = true
 14:21/0 = 0
+14:21/0/custom_data_0 = true
 15:21/0 = 0
 16:21/0 = 0
+16:21/0/custom_data_0 = true
 17:21/0 = 0
+17:21/0/custom_data_0 = true
 18:21/0 = 0
+18:21/0/custom_data_0 = true
 19:21/0 = 0
 0:22/0 = 0
 1:22/0 = 0
@@ -303,11 +309,17 @@ texture = ExtResource("1_s3hn7")
 9:22/0 = 0
 10:22/0 = 0
 12:22/0 = 0
+12:22/0/custom_data_0 = true
 13:22/0 = 0
+13:22/0/custom_data_0 = true
 14:22/0 = 0
+14:22/0/custom_data_0 = true
 16:22/0 = 0
+16:22/0/custom_data_0 = true
 17:22/0 = 0
+17:22/0/custom_data_0 = true
 18:22/0 = 0
+18:22/0/custom_data_0 = true
 19:22/0 = 0
 0:23/0 = 0
 1:23/0 = 0
@@ -321,11 +333,17 @@ texture = ExtResource("1_s3hn7")
 9:23/0 = 0
 10:23/0 = 0
 12:23/0 = 0
+12:23/0/custom_data_0 = true
 13:23/0 = 0
+13:23/0/custom_data_0 = true
 14:23/0 = 0
+14:23/0/custom_data_0 = true
 16:23/0 = 0
+16:23/0/custom_data_0 = true
 17:23/0 = 0
+17:23/0/custom_data_0 = true
 18:23/0 = 0
+18:23/0/custom_data_0 = true
 19:23/0 = 0
 0:24/0 = 0
 1:24/0 = 0
@@ -1419,6 +1437,8 @@ texture = ExtResource("1_s3hn7")
 7:103/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_s1by7"]
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_cdl16")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yykft"]
@@ -6228,19 +6248,19 @@ tile_map_data = PackedByteArray("AAAHAAMAAAATABMAAAAHAAQAAAATABMAAAAHAAUAAAATABM
 tile_set = SubResource("TileSet_cdl16")
 
 [node name="player" parent="." groups=["players"] instance=ExtResource("3_rgbiy")]
-position = Vector2(152, 64)
+position = Vector2(152, 72)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("4_2qqr6")]
+[node name="Enemy" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies"] instance=ExtResource("4_2qqr6")]
 position = Vector2(152, 232)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../kothepha")
 
-[node name="Enemy2" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("4_2qqr6")]
+[node name="Enemy2" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies"] instance=ExtResource("4_2qqr6")]
 position = Vector2(248, 160)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
 
-[node name="Enemy3" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies", "players"] instance=ExtResource("4_2qqr6")]
+[node name="Enemy3" parent="." node_paths=PackedStringArray("wall_layer", "brick_layer") groups=["enemies"] instance=ExtResource("4_2qqr6")]
 position = Vector2(344, 88)
 wall_layer = NodePath("../kothepha")
 brick_layer = NodePath("../brick")
@@ -6252,8 +6272,8 @@ visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_45sjw")]
 
-[node name="Enemy4" parent="." groups=["enemies", "players"] instance=ExtResource("9_vmrgj")]
-position = Vector2(352, 224)
+[node name="Enemy4" parent="." groups=["astar", "enemies"] instance=ExtResource("9_vmrgj")]
+position = Vector2(344, 200)
 player_node_path = NodePath("../player")
 map_parent_node_path = NodePath("..")
 ground_layer_path = NodePath("../ground")

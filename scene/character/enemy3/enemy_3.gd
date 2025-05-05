@@ -102,6 +102,7 @@ func move():
 	
 func _physics_process(delta):
 	if not is_moving:
+		update_animation(Vector2.ZERO)
 		return
 
 	var distance = move_target - global_position

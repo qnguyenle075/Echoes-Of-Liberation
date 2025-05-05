@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cfk5w0hc26n2f"]
+[gd_scene load_steps=17 format=4 uid="uid://cfk5w0hc26n2f"]
 
 [ext_resource type="Texture2D" uid="uid://cvpr8iq3fakt3" path="res://assets/Terrain/SMS_Stonelands_Tile_Set_Level_Mock_Up.png" id="1_lyki4"]
 [ext_resource type="Script" uid="uid://chwrji20jb37q" path="res://scene/map/map_test/map_test.gd" id="1_uku0k"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dm3nlnlprknj3" path="res://scene/character/player/player.tscn" id="4_iig70"]
 [ext_resource type="Texture2D" uid="uid://dq1bf4ayw0eq2" path="res://assets/Terrain/NES - Bomberman II Dynablaster - Tiles.png" id="4_nqjtq"]
 [ext_resource type="PackedScene" uid="uid://nxvdjsqcotgj" path="res://scene/character/enemy3/enemy3.tscn" id="5_uku0k"]
+[ext_resource type="PackedScene" uid="uid://c33uovv0xgkfg" path="res://scene/character/tank2/tank2.tscn" id="8_1145t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uku0k"]
 texture = ExtResource("1_lyki4")
@@ -2238,6 +2239,14 @@ position = Vector2(24, 17)
 
 [node name="Enemy" parent="." groups=["astar", "enemies", "players"] instance=ExtResource("5_uku0k")]
 position = Vector2(56, 88)
+player_node_path = NodePath("../player")
+map_parent_node_path = NodePath("..")
+ground_layer_path = NodePath("../ground")
+brick_layer_path = NodePath("../brick")
+kothepha_layer_path = NodePath("../kothepha")
+
+[node name="Enemy2" parent="." groups=["astar", "enemies"] instance=ExtResource("8_1145t")]
+position = Vector2(120, 24)
 player_node_path = NodePath("../player")
 map_parent_node_path = NodePath("..")
 ground_layer_path = NodePath("../ground")

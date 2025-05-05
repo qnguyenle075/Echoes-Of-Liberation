@@ -195,7 +195,7 @@ animations = [{
 size = Vector2(22.0339, 16.9492)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7rwlm"]
-size = Vector2(22.0339, 23.7288)
+size = Vector2(24.5763, 23.7288)
 
 [node name="Enemy" type="CharacterBody2D"]
 z_index = 1
@@ -205,26 +205,28 @@ collision_mask = 31
 script = ExtResource("1_3eavt")
 
 [node name="Panel" type="Panel" parent="."]
-offset_top = 17.0
-offset_right = 4.0
-offset_bottom = 37.0
+offset_left = 6.77966
+offset_top = 8.47458
+offset_right = 10.7797
+offset_bottom = 28.4746
 rotation = 1.5708
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-10.1695, 10.1695)
+position = Vector2(-1.69492, 0)
 sprite_frames = SubResource("SpriteFrames_kjkdt")
 animation = &"idle_west"
 autoplay = "idle_south"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-11.8644, 10.1695)
+position = Vector2(-1.69492, 9.53674e-07)
 shape = SubResource("RectangleShape2D_jp18s")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-11.0169, 10.1695)
+position = Vector2(-1.69492, 0)
 shape = SubResource("RectangleShape2D_7rwlm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
